@@ -7,13 +7,13 @@ export const useDarkModeStore = defineStore('darkMode', {
             background:'#1a1a1a',
             text: '#fdfcfc',
             primary: '#323e49',
-            accent: '#00dcff',
+            accent: '84FFFF',
         },
         lightColor: {
             background:'#fdfcfc',
             text: '#1a1a1a',
             primary: '#323e49',
-            accent: '#00dcff',
+            accent: '84FFFF',
         }
     }),
     actions: {
