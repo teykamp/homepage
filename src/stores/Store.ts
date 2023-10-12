@@ -30,7 +30,7 @@ export const useLanguageStore = defineStore('language', {
         content: {
             en: {
                 title: [
-                    'I\'m an ', 
+                    'I\'m an', 
                     'engineering consultant ', 
                     'and ', 
                     'full-stack developer', 
