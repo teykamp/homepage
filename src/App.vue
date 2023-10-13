@@ -64,6 +64,6 @@ html {
 
 * {
   transition-property: background-color, color;
-  transition: 500ms;
+  transition-duration: 500ms;
 }
 </style>
