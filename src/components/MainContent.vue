@@ -42,10 +42,10 @@
       }"></v-sheet>
       <v-card
         :style="{
-          ...accentColors,
+          ...secondaryColors,
           'height': '40vh',
         }"
-        class="d-flex justify-center mx-12">
+        :class="`d-flex justify-center ${smAndUp ? 'mx-12' : ''}`">
         <v-card-title>
           Acheivements
         </v-card-title>
@@ -59,7 +59,7 @@ import { computed, Ref } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify' 
 
-const { mdAndUp } = useDisplay()
+const { smAndUp, mdAndUp } = useDisplay()
 
 const darkMode = useDarkModeStore()
 const language = useLanguageStore()
@@ -72,7 +72,7 @@ const createColors = (colorKey: string): Ref<Record<string, string>> => computed
 });
 
 const colors = createColors('background');
-const accentColors = createColors('primary');
+const secondaryColors = createColors('primary');
 
 
 const scrollTop = (elementId: string) => {
@@ -89,7 +89,7 @@ const text = computed(() => {
 <style scoped>
 span {
     position: relative;
-    color: v-bind('darkMode.darkColor.gold');
+    color: v-bind('darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent');
     display: inline-block;
     cursor: pointer;
 }
@@ -97,7 +97,7 @@ span {
 span:after {
     position: absolute;
     left: 0px;
-    background-color: v-bind('darkMode.darkColor.gold');
+    background-color: v-bind('darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent');
     content: '';
     display: block;
     height: .1em;

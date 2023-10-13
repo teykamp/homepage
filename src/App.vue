@@ -12,7 +12,7 @@
     }">
       <v-container class="d-flex">
         <p>T<span :style="{
-          'color': store.darkColor.gold
+          'color': store.darkMode ? store.darkColor.accent : store.lightColor.accent
         }">.</span> Eykamp</p>
         <v-spacer></v-spacer>
         <v-btn 
@@ -20,7 +20,7 @@
           variant="text"
           density="comfortable"
           :style="{
-            'color': store.darkColor.gold
+            'color': store.darkMode ? store.darkColor.accent : store.lightColor.accent
           }"
         >{{ store.darkMode ? 'EN' : 'DE' }}</v-btn>
         <!-- fix colors above, make black in light mode? -->
