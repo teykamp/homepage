@@ -34,28 +34,28 @@
         'height': '100vh',
         'width': `${mdAndUp ? '50%' : '100%'}`,
     }">
-      <v-sheet :style="{
-        ...colors, 
-        'height': '20vh',
-      }"></v-sheet>
-      <v-container
+      <v-sheet
+        v-if="mdAndUp"
         :style="{
-        ...colors, 
-        'height': '40vh',
-        'border': 'solid'
+          ...colors, 
+          'height': '25vh',
+      }"></v-sheet>
+      <v-card
+        :style="{
+          ...accentColors,
+          'height': '40vh',
         }"
-        class="d-flex justify-center">
-        big increase
-        lol
-        funny
-        good worker
-      </v-container> 
+        class="d-flex justify-center mx-12">
+        <v-card-title>
+          Acheivements
+        </v-card-title>
+      </v-card> 
     </v-sheet>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, Ref } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify' 
 
@@ -64,14 +64,16 @@ const { mdAndUp } = useDisplay()
 const darkMode = useDarkModeStore()
 const language = useLanguageStore()
 
-const colors = computed(() => {
+const createColors = (colorKey: string): Ref<Record<string, string>> => computed(() => {
   return {
-      'background-color': 
-      `${darkMode.darkMode ? darkMode.darkColor.background : darkMode.lightColor.background}`,
-      'color':
-      `${darkMode.darkMode ? darkMode.darkColor.text : darkMode.lightColor.text}`,
-    }
-})
+    'background-color': darkMode.darkMode ? darkMode.darkColor[colorKey] : darkMode.lightColor[colorKey],
+    'color': darkMode.darkMode ? darkMode.darkColor.text : darkMode.lightColor.text,
+  };
+});
+
+const colors = createColors('background');
+const accentColors = createColors('primary');
+
 
 const scrollTop = (elementId: string) => {
   const element = document.getElementById(elementId)
