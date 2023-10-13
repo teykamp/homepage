@@ -36,19 +36,18 @@
     <v-sheet
       :style="{
         ...colors,
-        'height': '100vh',
         'width': `${mdAndUp ? '50%' : '100%'}`,
     }">
       <v-sheet
         v-if="mdAndUp"
         :style="{
           ...colors, 
-          'height': '25vh',
+          'height': '20vh',
       }"></v-sheet>
       <v-card
         :style="{
           ...secondaryColors,
-          'height': '40vh',
+          'height': '600px',
         }"
         :class="`d-flex justify-center ${smAndUp ? 'mx-12' : ''}`">
         <v-card-title>
