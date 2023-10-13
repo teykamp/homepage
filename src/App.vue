@@ -7,7 +7,8 @@
         `${store.darkMode ? store.darkColor.text : store.lightColor.text}`,
       'position': 'fixed',
       'top': 0,
-      'width': '100%'
+      'width': '100%',
+      'z-index': 99,
     }">
       <v-container class="d-flex">
         <p>T<span :style="{
@@ -59,5 +60,10 @@ body {
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+* {
+  transition-property: background-color, color;
+  transition: 500ms;
 }
 </style>

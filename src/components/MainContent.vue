@@ -1,28 +1,28 @@
 <template>
-  <v-row
-    class="d-flex"
+  <div
+    :class="mdAndUp ? 'd-flex' : ''"
   >
     <v-sheet 
       :style="{
         ...colors,
         'height': '100vh',
-        
+        'width': `${mdAndUp ? '50%' : '100%'}`,
       }">
         <v-sheet :style="{
           ...colors, 
-          'height': '40vh',
+          'height': '35vh',
         }"></v-sheet>
-      <v-container class="d-flex ml-16">
-        <h2>
+      <v-container class="d-flex pa-10">
+        <h2 :class="mdAndUp ? 'ml-16' : ''">
           {{ text.en.title[0] }}
           <span
             @click="scrollTop('jobOne')"
-            class="d-inline"
+            style="white-space: nowrap;"
           >{{ text.en.title[1] }}</span>
           {{ text.en.title[2] }}
           <span 
             @click="scrollTop('jobTwo')"
-            class="d-inline"
+            style="white-space: nowrap;"
           >{{ text.en.title[3] }}</span>
           {{ text.en.title[4] }}
         </h2>
@@ -32,6 +32,7 @@
       :style="{
         ...colors,
         'height': '100vh',
+        'width': `${mdAndUp ? '50%' : '100%'}`,
     }">
       <v-sheet :style="{
         ...colors, 
@@ -41,19 +42,24 @@
         :style="{
         ...colors, 
         'height': '40vh',
+        'border': 'solid'
         }"
         class="d-flex justify-center">
+        big increase
+        lol
+        funny
+        good worker
       </v-container> 
     </v-sheet>
-  </v-row>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
-// import { useDisplay } from 'vuetify' 
+import { useDisplay } from 'vuetify' 
 
-// const { xs, mdAndUp } = useDisplay()
+const { mdAndUp } = useDisplay()
 
 const darkMode = useDarkModeStore()
 const language = useLanguageStore()
