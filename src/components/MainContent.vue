@@ -12,7 +12,12 @@
           ...colors, 
           'height': '35vh',
         }"></v-sheet>
-      <v-container class="d-flex pa-10">
+      <v-container 
+        class="d-flex pa-10"
+        :style="{
+          'max-width': '800px',
+        }"
+      >
         <h2 :class="mdAndUp ? 'ml-16' : ''">
           {{ text.en.title[0] }}
           <span
