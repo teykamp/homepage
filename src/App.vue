@@ -34,7 +34,7 @@
       </v-container>
       <v-divider />
     </v-sheet>
-    <MainContent />
+    <main-content />
   </div>
 </template>
 

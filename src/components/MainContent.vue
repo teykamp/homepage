@@ -1,67 +1,87 @@
 <template>
-  <div
-    :class="mdAndUp ? 'd-flex' : ''"
-  >
-    <v-sheet 
-      :style="{
-        ...colors,
-        'height': '100vh',
-        'width': `${mdAndUp ? '50%' : '100%'}`,
-      }">
-        <v-sheet :style="{
-          ...colors, 
-          'height': '35vh',
-        }"></v-sheet>
-      <v-container 
-        class="d-flex pa-10"
+  <article id="container">
+    <section
+      id="child"
+      :class="mdAndUp ? 'd-flex' : ''"
+    >
+      <v-sheet 
         :style="{
-          'max-width': '800px',
-        }"
-      >
-        <h2 :class="mdAndUp ? 'ml-16' : ''">
-          {{ text.en.title[0] }}
-          <span
-            @click="scrollTop('jobOne')"
-            style="white-space: nowrap;"
-          >{{ text.en.title[1] }}</span>
-          {{ text.en.title[2] }}
-          <span 
-            @click="scrollTop('jobTwo')"
-            style="white-space: nowrap;"
-          >{{ text.en.title[3] }}</span>
-          {{ text.en.title[4] }}
-        </h2>
-      </v-container>
-    </v-sheet>
-    <v-sheet
-      :style="{
-        ...colors,
-        'width': `${mdAndUp ? '50%' : '100%'}`,
-    }">
+          ...colors,
+          'height': '100vh',
+          'width': `${mdAndUp ? '50%' : '100%'}`,
+        }">
+          <v-sheet :style="{
+            ...colors, 
+            'height': '35vh',
+          }"></v-sheet>
+        <v-container 
+          class="d-flex pa-10"
+          :style="{
+            'max-width': '800px',
+          }"
+        >
+          <h2 :class="mdAndUp ? 'ml-16' : ''">
+            {{ text.en.title[0] }}
+            <span
+              @click="scrollTop('jobOne')"
+              style="white-space: nowrap;"
+            >{{ text.en.title[1] }}</span>
+            {{ text.en.title[2] }}
+            <span 
+              @click="scrollTop('jobTwo')"
+              style="white-space: nowrap;"
+            >{{ text.en.title[3] }}</span>
+            {{ text.en.title[4] }}
+          </h2>
+        </v-container>
+        <div class="d-flex justify-center">
+          <v-btn
+            v-if="!mdAndUp"
+            @click="scrollToElement('acheivements', 85 /* Height of header */)"
+            :style="{
+              'background-color': darkMode.darkMode ? darkMode.lightColor.background : darkMode.darkColor.background,
+              'color': darkMode.darkMode ? darkMode.lightColor.text : darkMode.darkColor.text,
+              'margin-top': '200px',
+            }"
+            icon="mdi-arrow-down"
+          ></v-btn>
+        </div>
+      </v-sheet>
       <v-sheet
-        v-if="mdAndUp"
         :style="{
-          ...colors, 
-          'height': '20vh',
-      }"></v-sheet>
-      <v-card
-        :style="{
-          ...secondaryColors,
-          'height': '600px',
-        }"
-        :class="`d-flex justify-center ${smAndUp ? 'mx-12' : ''}`">
-        <v-card-title>
-          Acheivements
-        </v-card-title>
-      </v-card> 
-    </v-sheet>
-  </div>
+          ...colors,
+          'width': `${mdAndUp ? '50%' : '100%'}`,
+      }">
+        <v-sheet
+          v-if="mdAndUp"
+          :style="{
+            ...colors, 
+            'height': '20vh',
+        }"></v-sheet>
+        <v-card
+          :style="{
+            ...secondaryColors,
+            'height': '600px',
+          }"
+          :class="`d-flex justify-center ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`">
+          <v-card-title class="mt-6" id="acheivements">
+            Acheivements
+          </v-card-title>
+        </v-card> 
+      </v-sheet>
+    </section>
+    <section id="child">
+      <engineering-content />
+    </section>
+  </article>
 </template>
 
 <script setup lang="ts">
 import { computed, Ref } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
-import { useDisplay } from 'vuetify' 
+import { useDisplay } from 'vuetify'
+
+import EngineeringContent from './EngineeringContent.vue'
 
 const { smAndUp, mdAndUp } = useDisplay()
 
@@ -79,11 +99,18 @@ const colors = createColors('background');
 const secondaryColors = createColors('primary');
 
 
-const scrollTop = (elementId: string) => {
-  const element = document.getElementById(elementId)
-  if (element)
-    window.scrollTo(0, element.offsetTop)
+function scrollToElement(elementId: string, offset: number) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    const scrollOffset = element.getBoundingClientRect().top + window.scrollY - offset;
+    
+    window.scrollTo({
+      top: scrollOffset,
+      behavior: 'smooth',
+    });
+  }
 }
+
 
 const text = computed(() => {
   return language.content
@@ -113,4 +140,16 @@ span:after {
 span:hover:after {
     width: 100%;
 }
+
+/* #container {
+  height: 100vh; 
+  overflow-y: scroll; 
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-type: mandatory;
+}
+
+#child {
+  scroll-snap-align: start;
+} */
 </style>
