@@ -23,12 +23,12 @@
           <h2 :class="mdAndUp ? 'ml-16' : ''">
             {{ text.en.title[0] }}
             <span
-              @click="scrollTop('jobOne')"
+              @click="scrollToElement('engineeringContent', 60)"
               style="white-space: nowrap;"
             >{{ text.en.title[1] }}</span>
             {{ text.en.title[2] }}
             <span 
-              @click="scrollTop('jobTwo')"
+              @click="scrollToElement('codingContent',60)"
               style="white-space: nowrap;"
             >{{ text.en.title[3] }}</span>
             {{ text.en.title[4] }}
@@ -72,8 +72,10 @@
       </v-sheet>
     </section>
     <section id="child">
-      <engineering-content />
-      <coding-content />
+      <engineering-content id="engineeringContent"/>
+    </section>
+    <section id="child">
+      <coding-content id="codingContent"/>
     </section>
   </article>
 </template>
