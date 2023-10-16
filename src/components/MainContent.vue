@@ -37,7 +37,7 @@
         <div class="d-flex justify-center">
           <v-btn
             v-if="!mdAndUp"
-            @click="scrollToElement('acheivements', 85 /* Height of header */)"
+            @click="scrollToElement('acheivements')"
             :style="{
               'background-color': darkMode.darkMode ? darkMode.lightColor.background : darkMode.darkColor.background,
               'color': darkMode.darkMode ? darkMode.lightColor.text : darkMode.darkColor.text,
@@ -61,7 +61,8 @@
         <v-card
           :style="{
             ...secondaryColors,
-            'height': '600px',
+            'min-height': '600px',
+            'max-width': '900px'
           }"
           :class="`d-flex justify-center ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`">
           <v-card-title class="mt-6" id="acheivements">
@@ -72,6 +73,7 @@
     </section>
     <section id="child">
       <engineering-content />
+      <coding-content />
     </section>
   </article>
 </template>
@@ -82,6 +84,7 @@ import { useDarkModeStore, useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
 
 import EngineeringContent from './EngineeringContent.vue'
+import CodingContent from './CodingContent.vue'
 
 const { smAndUp, mdAndUp } = useDisplay()
 
@@ -99,7 +102,7 @@ const colors = createColors('background');
 const secondaryColors = createColors('primary');
 
 
-function scrollToElement(elementId: string, offset: number) {
+function scrollToElement(elementId: string, offset: number = 85 /* Height of header */) {
   const element = document.getElementById(elementId);
   if (element) {
     const scrollOffset = element.getBoundingClientRect().top + window.scrollY - offset;
