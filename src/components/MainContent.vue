@@ -63,7 +63,7 @@
           :style="{
             ...secondaryColors,
             'min-height': '600px',
-            'max-width': '900px'
+            'max-width': '900px',
           }"
           :class="`d-flex justify-center ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`">
           <v-card-title class="mt-6" id="acheivements">
@@ -116,7 +116,6 @@ function scrollToElement(elementId: string, offset: number = 85 /* Height of hea
     });
   }
 }
-
 
 const text = computed(() => {
   return language.content

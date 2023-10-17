@@ -11,6 +11,7 @@
       <li><strong>University Name:</strong> Degree in XYZ</li>
       <!-- Add more education entries as needed -->
     </ul>
+    download engr resume
   </div>
 </template>
 

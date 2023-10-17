@@ -35,12 +35,14 @@
       <v-divider />
     </v-sheet>
     <main-content />
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
 import { useDarkModeStore } from './stores/Store';
 import MainContent from './components/MainContent.vue';
+import Footer from './components/Footer.vue';
 
 const store = useDarkModeStore();
 </script>

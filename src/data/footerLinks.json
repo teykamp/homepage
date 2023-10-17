@@ -1,0 +1,14 @@
+{
+    "linkedin": {
+        "icon": "mdi-linkedin",
+        "ref": "https://www.linkedin.com/in/thomas-eykamp/"
+    },
+    "github": {
+        "icon": "mdi-github",
+        "ref": "https://www.github.com/teykamp"
+    },
+    "mail": {
+        "icon": "mdi-mail",
+        "ref": "mailto:thomas@eykamp.com"
+    }
+}
