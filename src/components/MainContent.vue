@@ -20,7 +20,8 @@
             'max-width': '800px',
           }"
         >
-          <h2 :class="mdAndUp ? 'ml-16' : ''">
+          <h2 :class="mdAndUp ? 'ml-16' : ''" style="max-width: 26em">
+            <!-- TODO: check that max-width parameter to see if necessary -->
             {{ text.en.title[0] }}
             <span
               @click="scrollToElement('engineeringContent', 60)"
