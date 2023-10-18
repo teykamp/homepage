@@ -20,7 +20,9 @@
             'max-width': '800px',
           }"
         >
-          <h2 :class="mdAndUp ? 'ml-16' : ''" style="max-width: 26em">
+          <h2 :class="mdAndUp ? 'ml-16' : ''" :style="{ 'max-width': '26em',
+             'font-size': mdAndUp ? '2em' : '1.1em',
+          }">
             <!-- TODO: check that max-width parameter to see if necessary -->
             {{ text.en.title[0] }}
             <span
@@ -28,11 +30,12 @@
               style="white-space: nowrap;"
             >{{ text.en.title[1] }}</span>
             {{ text.en.title[2] }}
-            <span 
+            <span
               @click="scrollToElement('codingContent',60)"
               style="white-space: nowrap;"
             >{{ text.en.title[3] }}</span>
             {{ text.en.title[4] }}
+            <p class="mt-6" style="font-size: 0.75em; font-style: italic;">I solve challenging and engaging problems in any industry .</p>
           </h2>
         </v-container>
         <div class="d-flex justify-center">
@@ -42,27 +45,23 @@
             :style="{
               'background-color': darkMode.darkMode ? darkMode.lightColor.background : darkMode.darkColor.background,
               'color': darkMode.darkMode ? darkMode.lightColor.text : darkMode.darkColor.text,
-              'margin-top': '200px',
+              'margin-top': '150px',
             }"
             icon="mdi-arrow-down"
           ></v-btn>
         </div>
       </v-sheet>
       <v-sheet
+        class="d-flex align-center"
         :style="{
           ...colors,
           'width': `${mdAndUp ? '50%' : '100%'}`,
       }">
-        <v-sheet
-          v-if="mdAndUp"
-          :style="{
-            ...colors, 
-            'height': '20vh',
-        }"></v-sheet>
         <v-card
           :style="{
             ...secondaryColors,
-            'min-height': '600px',
+            'min-height': '70vh',
+            'width': '100%',
             'max-width': '900px',
           }"
           :class="`d-flex justify-center ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`">
@@ -82,9 +81,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed, Ref } from 'vue'
+import { computed } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
+import { useGetColors } from '../composables/useGetColors'
+
 
 import EngineeringContent from './EngineeringContent.vue'
 import CodingContent from './CodingContent.vue'
@@ -94,15 +95,8 @@ const { smAndUp, mdAndUp } = useDisplay()
 const darkMode = useDarkModeStore()
 const language = useLanguageStore()
 
-const createColors = (colorKey: string): Ref<Record<string, string>> => computed(() => {
-  return {
-    'background-color': darkMode.darkMode ? darkMode.darkColor[colorKey] : darkMode.lightColor[colorKey],
-    'color': darkMode.darkMode ? darkMode.darkColor.text : darkMode.lightColor.text,
-  };
-});
-
-const colors = createColors('background');
-const secondaryColors = createColors('primary');
+const colors = useGetColors('background');
+const secondaryColors = useGetColors('primary');
 
 
 function scrollToElement(elementId: string, offset: number = 85 /* Height of header */) {

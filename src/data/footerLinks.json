@@ -8,7 +8,7 @@
         "ref": "https://www.github.com/teykamp"
     },
     "mail": {
-        "icon": "mdi-mail",
+        "icon": "mdi-email",
         "ref": "mailto:thomas@eykamp.com"
     }
 }

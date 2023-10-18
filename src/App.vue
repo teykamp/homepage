@@ -1,10 +1,7 @@
 <template>
   <div>
     <v-sheet :style="{
-      'background-color': 
-        `${store.darkMode ? store.darkColor.background : store.lightColor.background}`,
-      'color':
-        `${store.darkMode ? store.darkColor.text : store.lightColor.text}`,
+      ...colors,
       'position': 'fixed',
       'top': 0,
       'width': '100%',
@@ -41,10 +38,15 @@
 
 <script setup lang="ts">
 import { useDarkModeStore } from './stores/Store';
+import { useGetColors } from './composables/useGetColors'
+
+
 import MainContent from './components/MainContent.vue';
 import Footer from './components/Footer.vue';
 
 const store = useDarkModeStore();
+
+const colors = useGetColors('background')
 </script>
 
 <style>
