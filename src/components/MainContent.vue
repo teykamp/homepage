@@ -35,7 +35,7 @@
               style="white-space: nowrap;"
             >{{ text.en.title[3] }}</span>
             {{ text.en.title[4] }}
-            <p class="mt-6" style="font-size: 0.75em; font-style: italic;">{{ text.en.subtitle }}</p>
+            <p class="mt-6" style="font-size: 0.75em; font-style: italic; font-family: Martel;">{{ text.en.subtitle }}</p>
           </h2>
         </v-container>
         <div class="d-flex justify-center">

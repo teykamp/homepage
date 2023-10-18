@@ -4,8 +4,8 @@
       <v-col v-for="project in projects" :key="project.id" cols="12" md="4">
         <v-card class="project-card" elevation="2">
           <v-img :src="project.imageUrl" alt="Project Image" height="200"></v-img>
-          <v-card-title>{{ project.name }}</v-card-title>
-          <v-card-text>{{ project.description }}</v-card-text>
+          <v-card-title style="font-family: Martel">{{ project.name }}</v-card-title>
+          <v-card-text style="font-family: Roboto Slab">{{ project.description }}</v-card-text>
           <v-card-actions>
             <v-btn color="primary">Details</v-btn>
           </v-card-actions>
