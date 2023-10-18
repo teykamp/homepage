@@ -1,19 +1,32 @@
 <template>
   <div class="resume-content" style="height: 100vh">
-    <h3>Resume</h3>
-    <ul>
-      <li><strong>Job 1:</strong> Description of job 1</li>
-      <li><strong>Job 2:</strong> Description of job 2</li>
-      <!-- Add more job entries as needed -->
-    </ul>
-    <h3>Education</h3>
-    <ul>
-      <li><strong>University Name:</strong> Degree in XYZ</li>
-      <!-- Add more education entries as needed -->
-    </ul>
+    <v-row>
+      <v-col v-for="project in projects" :key="project.id" cols="12" md="4">
+        <v-card class="project-card" elevation="2">
+          <v-img :src="project.imageUrl" alt="Project Image" height="200"></v-img>
+          <v-card-title>{{ project.name }}</v-card-title>
+          <v-card-text>{{ project.description }}</v-card-text>
+          <v-card-actions>
+            <v-btn color="primary">Details</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script setup lang="ts">
-
+const projects = [
+        {
+          id: 1,
+          name: "Project 1",
+          description: "Description for Project 1",
+          imageUrl: "https://example.com/project1.jpg",
+        },
+        {
+          id: 2,
+          name: "Project 2",
+          description: "Description for Project 2",
+          imageUrl: "https://example.com/project2.jpg",
+        }]
 </script>
