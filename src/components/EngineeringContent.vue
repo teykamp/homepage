@@ -5,16 +5,29 @@
       <v-card-text>
         <v-list>
           <v-list-item>
+            <!-- redo system -->
             <v-list-item-title>Summary</v-list-item-title>
             <v-list-item-subtitle>dasdsadasdsa</v-list-item-subtitle>
           </v-list-item>
           <v-list-item>
             <v-list-item-title>Experience</v-list-item-title>
             <v-list-item-subtitle>
-              <v-row v-for="(experience, key) in text" :key="key">
-                <v-col style="max-width: 60px">{{ experience.year }}</v-col>
-                <v-col>{{ experience.title }} at {{ experience.company }}</v-col>
-              </v-row>
+              <div v-for="(experience, key) in text" :key="key">
+                <v-row>
+                  <v-col style="max-width: 60px">{{ experience.year }}</v-col>
+                  <v-col>{{ experience.title }} at {{ experience.company }}</v-col>
+                </v-row>
+                <v-row>
+                  <v-list>
+                    <v-list-item
+                      v-for="(accomplishment, key) in experience.accomplishments"
+                      :key="key"
+                    >
+                      {{ accomplishment }}
+                    </v-list-item>
+                  </v-list>
+                </v-row>
+              </div>
             </v-list-item-subtitle>
           </v-list-item>
         </v-list>
