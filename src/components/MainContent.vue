@@ -20,10 +20,10 @@
             'max-width': '800px',
           }"
         >
+        <!-- TODO: check that max-width parameter to see if necessary -->
           <h2 :class="mdAndUp ? 'ml-16' : ''" :style="{ 'max-width': '26em',
              'font-size': mdAndUp ? '2em' : '1.1em',
           }">
-            <!-- TODO: check that max-width parameter to see if necessary -->
             {{ text.en.title[0] }}
             <span
               @click="scrollToElement('engineeringContent', 60)"
@@ -36,6 +36,7 @@
             >{{ text.en.title[3] }}</span>
             {{ text.en.title[4] }}
             <p class="mt-6" style="font-size: 0.75em; font-style: italic; font-family: Martel;">{{ text.en.subtitle }}</p>
+            <!-- <p style="font-size: 0.45em; font-family: Roboto Slab; font-weight: 400;">More About Me</p> -->
           </h2>
         </v-container>
         <div class="d-flex justify-center">
@@ -90,7 +91,7 @@ import { useGetColors } from '../composables/useGetColors'
 
 
 import EngineeringContent from './EngineeringContent.vue'
-import CodingContent from './CodingContent.vue'
+// import CodingContent from './CodingContent.vue'
 
 const { smAndUp, mdAndUp } = useDisplay()
 

@@ -50,9 +50,7 @@ const colors = useGetColors('background')
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Young+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel&family=Playfair+Display&family=Roboto+Slab:wght@300&family=Young+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Martel&family=Playfair+Display&family=Young+Serif&display=swap');
 body {
   font-family: 'Playfair Display', serif;
   font-family: 'Young Serif', serif;
