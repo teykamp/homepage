@@ -5,7 +5,7 @@
         <v-card class="project-card" elevation="2">
           <v-img :src="project.imageUrl" alt="Project Image" height="200"></v-img>
           <v-card-title style="font-family: Martel">{{ project.name }}</v-card-title>
-          <v-card-text style="font-family: Roboto Slab">{{ project.description }}</v-card-text>
+          <v-card-text style="font-family: Roboto">{{ project.description }}</v-card-text>
           <v-card-actions>
             <v-btn color="primary">Details</v-btn>
           </v-card-actions>
