@@ -68,6 +68,8 @@
           <v-card-title class="mt-6" id="acheivements">
             Acheivements
           </v-card-title>
+          cs tutor
+          self-taught python/js/ts
         </v-card> 
       </v-sheet>
     </section>
@@ -75,7 +77,7 @@
       <engineering-content id="engineeringContent"/>
     </section>
     <section id="child">
-      <coding-content id="codingContent"/>
+      <!-- <coding-content id="codingContent"/> -->
     </section>
   </article>
 </template>
