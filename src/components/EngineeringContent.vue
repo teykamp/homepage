@@ -1,53 +1,61 @@
 <template>
   <div class="resume-content" :style="{
       ...colors,
-      'min-height': '100vh'
+      'min-height': '100vh',
+      'padding-left': mdAndUp ? '20%' : '',
+      'padding-right': mdAndUp ? '20%' : '',
     }">
       <v-sheet
-        v-for="(experience, key) in text"
-        :key="key"
-        class="pa-6"
         :style="{
           ...colors,
-          'margin': 'auto',
-          'max-width': '800px',
-        }"
-      >
-        <v-card-title :style="{
-          'font-size': mdAndUp ? '' : '1em'
-        }">
-          {{ experience.title }}
-        </v-card-title>
-        <v-card-subtitle style="font-family: Martel; max-width: 300px;">
-          <div class="d-flex">
-            <v-icon>mdi-map-marker</v-icon>
-            {{ experience.company }}
+          'border': mdAndUp ? 'solid' : '',
+      }">
+        <v-sheet
+          v-for="(experience, key) in text"
+          :key="key"
+          class="pa-6"
+          :style="{
+            ...colors,
+            'margin': 'auto',
+            'max-width': '800px',
+          }"
+        >
+          <v-card-title :style="{
+            'font-size': mdAndUp ? '' : '1em'
+          }">
+            {{ experience.title }}
+          </v-card-title>
+          <v-card-subtitle style="font-family: Martel; max-width: 300px;">
+            <div class="d-flex">
+              <v-icon>mdi-map-marker</v-icon>
+              {{ experience.company }}
+              <v-spacer></v-spacer>
+              <v-icon>mdi-calendar</v-icon>
+              {{ experience.year }}
+            </div>
+          </v-card-subtitle>
+          <v-card-actions>
             <v-spacer></v-spacer>
-            <v-icon>mdi-calendar</v-icon>
-            {{ experience.year }}
-          </div>
-        </v-card-subtitle>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            @click="toggleShow(key-1)"
-            density="comfortable"
-            size="small"
-            :text="show[key-1] ? 'Show Less' : 'Show More'"
-            style="font-family: Martel;"
-          ></v-btn>
-        </v-card-actions>
-        <v-expand-transition>
-          <div v-show="show[key-1]">
-            <v-divider></v-divider>
-            <v-card-text 
-              v-for="accomplishment in experience.accomplishments"
-              style="font-family: Roboto Slab;"
-            >
-              {{ accomplishment }}
-            </v-card-text>
-          </div>
-        </v-expand-transition>
+            <v-btn
+              @click="toggleShow(key-1)"
+              density="comfortable"
+              size="small"
+              :text="show[key-1] ? 'Show Less' : 'Show More'"
+              style="font-family: Martel;"
+            ></v-btn>
+          </v-card-actions>
+          <v-expand-transition>
+            <div v-show="show[key-1]">
+              <v-divider></v-divider>
+              <v-card-text 
+                v-for="accomplishment in experience.accomplishments"
+                style="font-family: Roboto Slab;"
+              >
+                {{ accomplishment }}
+              </v-card-text>
+            </div>
+          </v-expand-transition>
+        </v-sheet>
       </v-sheet>
     download Resume
   </div>
