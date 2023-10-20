@@ -43,7 +43,7 @@ export const useLanguageStore = defineStore('language', {
             title: 'Environmental Engineer',
             year: '2023',
             accomplishments: {
-              1: 'Successfully oversaw a comprehensive 6-month project from inception to completion, achieving remarkable milestones by boosting objective completion rates by an impressive 200% and 150% respectively.',
+              1: 'Successfully oversaw a comprehensive 6-month project from inception to completion, rapidly achieving milestones by boosting objective completion rates by 200% and 150% respectively.',
               2: 'Conceptualized a variety of chemical process diagrams and remediation procedures ranging from heavy metals to fluorinated hydrocarbons in a variety of chellenging environmental conditions.',
               3: 'Integral member of compliance unit tasked with the strategic sampling of both residential and industrial clientele, fostering collaborative interactions with residents and management.',
               4: 'Effectively maintained and improved existing infrustructure and workflows at a variety of sites.',

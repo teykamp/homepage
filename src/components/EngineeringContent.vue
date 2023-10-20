@@ -40,7 +40,10 @@
         <v-expand-transition>
           <div v-show="show[key-1]">
             <v-divider></v-divider>
-            <v-card-text v-for="accomplishment in experience.accomplishments">
+            <v-card-text 
+              v-for="accomplishment in experience.accomplishments"
+              style="font-family: Roboto Slab;"
+            >
               {{ accomplishment }}
             </v-card-text>
           </div>
