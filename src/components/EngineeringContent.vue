@@ -63,7 +63,8 @@ import { useDisplay } from 'vuetify'
 const { mdAndUp } = useDisplay()
 
 const colors = useGetColors('background')
-const selectedColors = useGetColors('primary')
+// figure out some way to have the currently selected one highlighted...
+// const selectedColors = useGetColors('primary')
 const language = useLanguageStore()
 const text = computed(() => language.content[language.language].resume)
 const length = Object.keys(text.value).length
