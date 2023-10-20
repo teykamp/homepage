@@ -40,7 +40,6 @@
 import { useDarkModeStore } from './stores/Store';
 import { useGetColors } from './composables/useGetColors'
 
-
 import MainContent from './components/MainContent.vue';
 import Footer from './components/Footer.vue';
 

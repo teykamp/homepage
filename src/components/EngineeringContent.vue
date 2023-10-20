@@ -1,34 +1,45 @@
 <template>
   <div class="resume-content" :style="{
       ...colors,
-      'height': '100vh'
+      'min-height': '100vh'
     }">
       <v-sheet
         v-for="(experience, key) in text"
         :key="key"
         class="pa-6"
         :style="{
-      ...colors,
-    }"
+          ...colors,
+          'margin': 'auto',
+          'max-width': '800px',
+        }"
       >
-        <v-card-title>
+        <v-card-title :style="{
+          'font-size': mdAndUp ? '' : '1em'
+        }">
           {{ experience.title }}
         </v-card-title>
-        <v-card-subtitle>
-          <v-icon>mdi-map-marker</v-icon>
-          {{ experience.company }}
+        <v-card-subtitle style="font-family: Martel; max-width: 300px;">
+          <div class="d-flex">
+            <v-icon>mdi-map-marker</v-icon>
+            {{ experience.company }}
+            <v-spacer></v-spacer>
+            <v-icon>mdi-calendar</v-icon>
+            {{ experience.year }}
+          </div>
         </v-card-subtitle>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            @click="show[key-1] = !show[key-1]"
-            text="Show More"
+            @click="toggleShow(key-1)"
+            density="comfortable"
+            size="small"
+            :text="show[key-1] ? 'Show Less' : 'Show More'"
+            style="font-family: Martel;"
           ></v-btn>
         </v-card-actions>
         <v-expand-transition>
           <div v-show="show[key-1]">
             <v-divider></v-divider>
-
             <v-card-text v-for="accomplishment in experience.accomplishments">
               {{ accomplishment }}
             </v-card-text>
@@ -43,13 +54,27 @@
 import { ref, computed } from 'vue'
 
 import { useGetColors } from '../composables/useGetColors'
-import { useLanguageStore } from '../stores/Store';
+import { useLanguageStore } from '../stores/Store'
+import { useDisplay } from 'vuetify'
 
-const colors = useGetColors('background');
+const { mdAndUp } = useDisplay()
+
+const colors = useGetColors('background')
+const selectedColors = useGetColors('primary')
 const language = useLanguageStore()
-const text = computed(() => {
-  return language.content[language.language].resume
-})
+const text = computed(() => language.content[language.language].resume)
 const length = Object.keys(text.value).length
 const show = ref(Array.from( { length } , () => false))
+const currentKey = ref<number>()
+const toggleShow = (key: number) => {
+  if (key === currentKey.value) {
+    show.value[key] = !show.value[key];
+  } else {
+    if (currentKey.value !== undefined) {
+      show.value[currentKey.value] = false;
+    }
+    currentKey.value = key;
+    show.value[key] = true;
+  }
+}
 </script>
