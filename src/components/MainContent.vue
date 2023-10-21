@@ -61,7 +61,7 @@
         <v-card
           :style="{
             ...secondaryColors,
-            'min-height': '70vh',
+            'min-height': '70vh', // might need to fix on tall screens
             'width': '100%',
             'max-width': '900px',
           }"
@@ -78,7 +78,7 @@
       <engineering-content id="engineeringContent"/>
     </section>
     <section id="child">
-      <!-- <coding-content id="codingContent"/> -->
+      <coding-content id="codingContent"/>
     </section>
   </article>
 </template>
@@ -91,7 +91,7 @@ import { useGetColors } from '../composables/useGetColors'
 
 
 import EngineeringContent from './EngineeringContent.vue'
-// import CodingContent from './CodingContent.vue'
+import CodingContent from './CodingContent.vue'
 
 const { smAndUp, mdAndUp } = useDisplay()
 

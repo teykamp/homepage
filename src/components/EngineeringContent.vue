@@ -40,9 +40,10 @@
               @click="toggleShow(key-1)"
               density="comfortable"
               size="small"
-              :text="show[key-1] ? 'Show Less' : 'Show More'"
-              style="font-family: Martel;"
+              :icon="show[key-1] ? 'mdi-minus' : 'mdi-plus'"
             ></v-btn>
+            <!-- :text="show[key-1] ? 'Show Less' : 'Show More'"
+              style="font-family: Martel;" -->
           </v-card-actions>
           <v-expand-transition>
             <div v-show="show[key-1]">

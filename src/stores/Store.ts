@@ -67,6 +67,44 @@ export const useLanguageStore = defineStore('language', {
               2: 'Successfully excecuted a variety of challenging academic research and design projects in the fields of chemical and environmental engineering and computer science.',
             }
           },
+        },
+        projects: {
+          1: {
+            title: 'ArtSite',
+            description: 'Full stack application that displays text or image posts in a blog-like style. Allows users to like, comment, and reply to posts. Includes database management tools and post statistics.',
+            img: '',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'MongoDB': 'green',
+              'Typescript': 'blue',
+              'Express': 'grey',
+            },
+            src: 'https://github.com/teykamp/artsite',
+            deploy: 'https://artsite-production.up.railway.app/',
+          },
+          2: {
+            title: 'Clubs',
+            description: 'Front-end application to generate JSON output for arduino-run LED juggling clubs. Allows Import/Export of JSON, communication with a self-built arduino-api, and ability to run on the arduino itself. Can be accessed through a wi-fi chip on the arduino through a phone or computer.',
+            img: '',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'Typescript': 'blue',
+            },
+            src: 'https://github.com/teykamp/clubs',
+            deploy: '',
+          },
+          // 3: {
+          //   title: 'Popout Portfolio',
+          //   description: '',
+          //   img: '',
+          //   tags: {
+
+          //   },
+          //   src: '',
+          //   deploy: '',
+          // }
         }
       },
       de: {
