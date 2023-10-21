@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="resume-content" 
+    class="resume-content d-flex justify-center flex-wrap" 
     :style="{
       'min-height': '100vh',
       ...colors,
@@ -8,13 +8,19 @@
     <v-sheet
       v-for="(project, key) in text"
       :key="key"
+      class="mt-10"
       :style="{
-        ...colors
+        ...colors,
+        'min-width': '350px',
+        'max-width': '400px',
       }"
     >
       <v-card-title>
         {{ project.title }}
       </v-card-title>
+      <v-card-text>
+        {{ project.description }}
+      </v-card-text>
     </v-sheet>
   </div>
 </template>
