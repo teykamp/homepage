@@ -8,7 +8,7 @@
       <v-sheet
         :style="{
           ...colors,
-          'border': mdAndUp ? 'solid' : '',
+          'border': mdAndUp ? 'solid 6px' : '',
       }">
         <v-sheet
           v-for="(experience, key) in text"
