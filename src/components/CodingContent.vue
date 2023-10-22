@@ -25,6 +25,38 @@
       <v-card-text>
         {{ project.description }}
       </v-card-text>
+      <v-card-actions class="d-inline">
+        <v-btn
+          v-if="project.src"
+          text="Project Source Code"
+          prepend-icon="mdi-github"
+          class="mt-2"
+          :href="project.src"
+          target="_blank"
+        ></v-btn>
+        <v-btn
+          v-if="project.deploy"
+          text="Project Deployment"
+          prepend-icon="mdi-link"
+          class="mt-2"
+          :href="project.deploy"
+          target="_blank"
+        ></v-btn>
+      </v-card-actions>
+      <v-card-actions class="d-flex flex-wrap" :style="{
+        'position': 'absolute',
+        'bottom': '0'
+      }">
+        <v-chip
+          v-for="(tag, key) in project.tags"
+          :key="key"
+          :color="tag"
+          variant="outlined"
+          class="mt-2 mr-2"
+        >
+          {{ key }}
+        </v-chip>
+      </v-card-actions>
     </v-card>
   </div>
 </template>
