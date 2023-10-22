@@ -65,12 +65,20 @@
             'width': '100%',
             'max-width': '900px',
           }"
-          :class="`d-flex justify-center ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`">
-          <v-card-title class="mt-6" id="acheivements">
+          :class="`d-block ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`"
+        >
+          <v-card-title class="mt-6 text-center" id="acheivements">
             Acheivements
           </v-card-title>
-          cs tutor
-          self-taught python/js/ts
+          <!-- add some styling here based on the if it is displayed on mobile or not (i.e text size and spacing between list items) -->
+          <v-card-text>
+            <li 
+              v-for="(acheivement, key) in text.en.acheivements"
+              :key="key"
+            >
+              {{ acheivement }}
+            </li>
+            </v-card-text>
         </v-card> 
       </v-sheet>
     </section>

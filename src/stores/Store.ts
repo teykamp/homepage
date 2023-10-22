@@ -29,7 +29,7 @@ export const useLanguageStore = defineStore('language', {
   state: () => ({
     language: 'en',
     content: {
-      en: {
+      en: { // add stuff for hanse chat and for BOSS whatever thing
         title: [
           'I\'m an', 
           'engineering consultant ', 
@@ -37,6 +37,14 @@ export const useLanguageStore = defineStore('language', {
           'full-stack developer', 
           '.'],
         subtitle: 'I solve challenging and engaging problems in any industry .',
+        acheivements: {
+          1: 'Self-taught Python, Typescript, C, and R',
+          2: 'Successful CS and Math Tutor; In-depth over multiple years',
+          3: 'Proficient in a variety of disciplines including Engineering, Programming, and Data Science',
+          4: 'High increases in productivity on all projects joined',
+          5: 'Works well under pressure, and successful in time-sensitive situations',
+          6: 'Holds EIT and HAZWOPER 40hr certificates',
+        },
         resume: {
           1: {
             company: 'AECOM',
