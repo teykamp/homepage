@@ -22,10 +22,10 @@
       <v-card-title>
         {{ project.title }}
       </v-card-title>
-      <v-card-text>
+      <v-card-text style="font-family: Roboto Slab;">
         {{ project.description }}
       </v-card-text>
-      <v-card-actions class="d-inline">
+      <v-card-actions class="d-inline" style="font-family: Martel;">
         <v-btn
           v-if="project.src"
           text="Project Source Code"
@@ -43,7 +43,9 @@
           target="_blank"
         ></v-btn>
       </v-card-actions>
-      <v-card-actions class="d-flex flex-wrap" :style="{
+      <v-card-actions 
+        class="d-flex flex-wrap" 
+        :style="{
         'position': 'absolute',
         'bottom': '0'
       }">
