@@ -5,14 +5,18 @@
       'min-height': '100vh',
       ...colors,
   }">
-    <v-sheet
+    <v-card
       v-for="(project, key) in text"
       :key="key"
       class="mt-10"
+      elevation="0"
       :style="{
-        ...colors,
+        ...secondaryColors,
         'min-width': '350px',
         'max-width': '400px',
+        'margin-right': smAndUp ? '20px' : '',
+        'margin-left': smAndUp ? '20px' : '',
+        'height': '400px',
       }"
     >
       <v-card-title>
@@ -21,7 +25,7 @@
       <v-card-text>
         {{ project.description }}
       </v-card-text>
-    </v-sheet>
+    </v-card>
   </div>
 </template>
 
@@ -33,8 +37,9 @@ import { useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
 
 
-const { mdAndUp } = useDisplay()
+const { smAndUp } = useDisplay()
 const colors = useGetColors('background')
+const secondaryColors = useGetColors('primary')
 const language = useLanguageStore()
 const text = computed(() => language.content[language.language].projects)
 </script>
