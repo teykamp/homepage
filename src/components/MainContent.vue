@@ -61,24 +61,35 @@
         <v-card
           :style="{
             ...secondaryColors,
-            'min-height': '70vh', // might need to fix on tall screens
+            // 'min-height': '70vh', // might need to fix on tall screens
             'width': '100%',
             'max-width': '900px',
+            'padding': '20px',
           }"
           :class="`d-block ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`"
         >
+        <!-- add some styling here based on the if it is displayed on mobile or not (i.e text size and spacing between list items) -->
+        
+        <v-list :style="{
+          ...secondaryColors,
+          'padding-left': '20px',
+          'padding-bottom': '20px',
+        }">
           <v-card-title class="mt-6 text-center" id="acheivements">
             Acheivements
           </v-card-title>
-          <!-- add some styling here based on the if it is displayed on mobile or not (i.e text size and spacing between list items) -->
-          <v-card-text>
-            <li 
+            <v-list-item 
               v-for="(acheivement, key) in text.en.acheivements"
               :key="key"
+              :style="{
+                ...secondaryColors,
+                'font-family': 'Martel',
+              }"
+              class="mb-5"
             >
               {{ acheivement }}
-            </li>
-            </v-card-text>
+            </v-list-item>
+          </v-list>
         </v-card> 
       </v-sheet>
     </section>
