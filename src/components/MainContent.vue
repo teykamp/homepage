@@ -84,6 +84,8 @@
               :style="{
                 ...secondaryColors,
                 'font-family': 'Martel',
+                'padding-left': `${xs ? '1%' : '10%'}`,
+                'padding-right': `${xs ? '5%' : '10%'}`,
               }"
               class="mb-5"
             >
@@ -112,7 +114,7 @@ import { useGetColors } from '../composables/useGetColors'
 import EngineeringContent from './EngineeringContent.vue'
 import CodingContent from './CodingContent.vue'
 
-const { smAndUp, mdAndUp } = useDisplay()
+const { xs, smAndUp, mdAndUp } = useDisplay()
 
 const darkMode = useDarkModeStore()
 const language = useLanguageStore()
