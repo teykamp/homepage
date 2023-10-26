@@ -38,7 +38,7 @@ export const useLanguageStore = defineStore('language', {
           '.'],
         subtitle: 'I solve challenging and engaging problems in any industry .',
         acheivements: {
-          1: 'Self-taught Python, Typescript, C, and R',
+          1: 'Self-taught Python, Javascript, C, and R',
           2: 'Successful CS and Math Tutor; In-depth over multiple years',
           3: 'Proficient in a variety of disciplines including Engineering, Programming, and Data Science',
           4: 'High increases in productivity on all projects joined',
