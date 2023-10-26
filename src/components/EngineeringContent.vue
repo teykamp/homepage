@@ -4,12 +4,17 @@
       // 'min-height': '100vh',
       'padding-left': mdAndUp ? '20%' : '',
       'padding-right': mdAndUp ? '20%' : '',
+      'padding-top': '10px',
     }">
       <v-sheet
         :style="{
           ...colors,
           'border': mdAndUp ? 'solid 6px' : '',
+          'margin-top': mdAndUp ? '' : '30px',
       }">
+        <h2 class="text-center mt-8">
+          Experience
+        </h2>
         <v-sheet
           v-for="(experience, key) in text"
           :key="key"
