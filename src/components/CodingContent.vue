@@ -2,7 +2,7 @@
   <div 
     class="resume-content d-flex justify-center flex-wrap" 
     :style="{
-      'min-height': '100vh',
+      // 'min-height': '100vh',
       ...colors,
   }">
     <v-card

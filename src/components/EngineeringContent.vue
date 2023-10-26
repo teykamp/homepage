@@ -1,7 +1,7 @@
 <template>
   <div class="resume-content" :style="{
       ...colors,
-      'min-height': '100vh',
+      // 'min-height': '100vh',
       'padding-left': mdAndUp ? '20%' : '',
       'padding-right': mdAndUp ? '20%' : '',
     }">
