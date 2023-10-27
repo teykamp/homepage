@@ -58,7 +58,7 @@
           ...colors,
           'width': `${mdAndUp ? '50%' : '100%'}`,
       }">
-        <v-card
+        <v-sheet
           :style="{
             ...secondaryColors,
             // 'min-height': '70vh', // might need to fix on tall screens
@@ -92,7 +92,7 @@
               {{ acheivement }}
             </v-list-item>
           </v-list>
-        </v-card> 
+        </v-sheet> 
       </v-sheet>
     </section>
     <section id="child">
