@@ -8,14 +8,12 @@ export const useDarkModeStore = defineStore('darkMode', {
       text: '#fdfcfc',
       primary: '#2a2c34',
       accent: '#f8a40a', // gold
-      secondary: '84FFFF',
     },
     lightColor: {
       background:'#fdfcfc',
       text: '#1a1a1a',
       primary: '#F1EFEF',
       accent: '#07e467', // mint
-      secondary: '84FFFF',
     }
   }),
   actions: {
