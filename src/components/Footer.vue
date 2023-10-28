@@ -56,7 +56,6 @@
                 class="mx-2"
                 :style="{
                   ...secondaryColors,
-                  /* add hover accent colors maybe */
               }"></v-btn>
             </v-row>
           </v-card>
