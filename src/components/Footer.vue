@@ -27,17 +27,26 @@
                 <v-form
                   v-model="valid"
                   @submit.prevent
+                  :style="{
+                    'font-family': 'Roboto Slab',
+                  }"
                 >
-                  <div class="d-flex align-center" style="width: 100%;">
-                    <v-text-field
-                      :rules="nameRules"
-                      placeholder="Name"
-                    ></v-text-field>
-                    <v-text-field
-                      :rules="emailRules"
-                      placeholder="Email"
-                    ></v-text-field>
-                  </div>
+                  <v-row class="d-flex justify-space-between">
+                    <v-col>
+                      <v-text-field
+                        style="min-width: 300px;"
+                        :rules="nameRules"
+                        placeholder="Name"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col>
+                      <v-text-field
+                        style="min-width: 300px;"
+                        :rules="emailRules"
+                        placeholder="Email"
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
                   <v-textarea
                     placeholder="Message"
                     :rules="messageRules"
