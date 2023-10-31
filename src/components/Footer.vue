@@ -5,11 +5,12 @@
     }">
       <v-container class="d-flex justify-center">
         <div>
-          <p>T<span :style="{
+          <p class="pb-6 pl-3">T<span :style="{
             'color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
           }">.</span> Eykamp</p>
           <v-card
             :style="{
+              'border-radius': lgAndUp ? '' : '0',
               'background-color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
               'width': lgAndUp ? '1200px' : '100vw',
               
@@ -18,7 +19,7 @@
             <v-card-title class="text-center">Contact me</v-card-title>
             <div class="d-flex justify-center">
               <v-sheet 
-                class="rounded-lg pa-6"
+                :class="`${mdAndUp ? 'rounded-lg' : ''} pa-6`"
                 :style="{
                   'width': mdAndUp ? '60%' : '100%',
                 }"
