@@ -1,10 +1,8 @@
 <template>
-  <div>
     <v-divider></v-divider>
     <v-sheet :style="{
       ...colors,
     }">
-    <!-- something broken here cus wont fill up page on smDown -->
       <v-container class="d-flex justify-center">
         <div>
           <p>T<span :style="{
@@ -13,7 +11,8 @@
           <v-card
             :style="{
               'background-color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
-              'width': mdAndUp ? '1200px' : '100%',
+              'width': lgAndUp ? '1200px' : '100vw',
+              
             }"
           >
             <v-card-title class="text-center">Contact me</v-card-title>
@@ -62,7 +61,6 @@
         </div>
       </v-container>
     </v-sheet>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -74,7 +72,7 @@ import { useDisplay } from 'vuetify'
 
 import footerLinks from '../data/footerLinks.json'
 
-const { mdAndUp } = useDisplay()
+const { lgAndUp, mdAndUp } = useDisplay()
 
 const darkMode = useDarkModeStore()
 const colors = useGetColors('background')
