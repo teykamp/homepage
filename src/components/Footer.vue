@@ -131,17 +131,6 @@ const messageRules: ValidationRule[] = [
   }
 ]
 
-// require('dotenv').config()
-
-// const sendEmail = () => {
-//       emailjs.sendForm('service_d98il4k', 'template_npvs9ui', contactForm.value, 'V-BWoXu67Cs6ht84n')
-//         .then((result) => {
-//             console.log('SUCCESS!', result.text);
-//         }, (error) => {
-//             console.log('FAILED...', error.text);
-//         });
-//     }
-
 const sendEmail = async () => {
   try {
     // Create a new HTMLFormElement
