@@ -152,8 +152,12 @@ const sendEmail = async () => {
     messageInput.value = contactForm.value.message;
     formElement.appendChild(messageInput);
 
-
-    await emailjs.sendForm('serviceId', 'templateId', formElement, 'publicKey');
+    await emailjs.sendForm( import.meta.env.VITE_APP_SERVICE_ID,
+                            import.meta.env.VITE_APP_TEMPLATE_ID, 
+                            formElement, 
+                            import.meta.env.VITE_APP_PUBLIC_KEY
+                          )
+    
     contactForm.value.name = ''
     contactForm.value.email = ''
     contactForm.value.message = ''
