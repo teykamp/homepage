@@ -154,14 +154,13 @@ const sendEmail = async () => {
 
 
     await emailjs.sendForm('serviceId', 'templateId', formElement, 'publicKey');
+    contactForm.value.name = ''
+    contactForm.value.email = ''
+    contactForm.value.message = ''
 
   } catch (error) {
     console.log({ error });
   }
-  // // Reset form field
-  // this.name = ''
-  // this.email = ''
-  // this.message = ''
 }
 
 </script>
