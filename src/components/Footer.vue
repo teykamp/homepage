@@ -25,8 +25,9 @@
                 }"
               >
                 <v-form
+                  ref="contactForm"
                   v-model="valid"
-                  @submit.prevent
+                  @submit.prevent="sendEmail"
                   :style="{
                     'font-family': 'Roboto Slab',
                   }"
@@ -34,6 +35,7 @@
                   <v-row class="d-flex justify-space-between">
                     <v-col>
                       <v-text-field
+                        v-model="contactForm.name"
                         style="min-width: 300px;"
                         :rules="nameRules"
                         placeholder="Name"
@@ -41,6 +43,7 @@
                     </v-col>
                     <v-col>
                       <v-text-field
+                        v-model="contactForm.email"
                         style="min-width: 300px;"
                         :rules="emailRules"
                         placeholder="Email"
@@ -48,9 +51,13 @@
                     </v-col>
                   </v-row>
                   <v-textarea
+                    v-model="contactForm.message"
                     placeholder="Message"
                     :rules="messageRules"
                   ></v-textarea>
+                  <v-btn
+                    type="submit"
+                  >Send Email</v-btn>
                 </v-form>
               </v-sheet>
             </div>
@@ -74,6 +81,8 @@
 </template>
 
 <script setup lang="ts">
+import emailjs from 'emailjs-com'
+
 import { ref } from 'vue'
 
 import { useDarkModeStore } from '../stores/Store'
@@ -121,4 +130,49 @@ const messageRules: ValidationRule[] = [
     return 'Message is Required.';
   }
 ]
+
+// require('dotenv').config()
+
+// const sendEmail = () => {
+//       emailjs.sendForm('service_d98il4k', 'template_npvs9ui', contactForm.value, 'V-BWoXu67Cs6ht84n')
+//         .then((result) => {
+//             console.log('SUCCESS!', result.text);
+//         }, (error) => {
+//             console.log('FAILED...', error.text);
+//         });
+//     }
+
+const sendEmail = async () => {
+  try {
+    // Create a new HTMLFormElement
+    const formElement = document.createElement('form');
+
+    // Create form controls and add them to the form element
+    const nameInput = document.createElement('input');
+    nameInput.name = 'name';
+    nameInput.value = contactForm.value.name;
+    formElement.appendChild(nameInput);
+
+    const emailInput = document.createElement('input');
+    emailInput.name = 'email';
+    emailInput.value = contactForm.value.email;
+    formElement.appendChild(emailInput);
+
+    const messageInput = document.createElement('textarea');
+    messageInput.name = 'message';
+    messageInput.value = contactForm.value.message;
+    formElement.appendChild(messageInput);
+
+
+    await emailjs.sendForm('serviceId', 'templateId', formElement, 'publicKey');
+
+  } catch (error) {
+    console.log({ error });
+  }
+  // // Reset form field
+  // this.name = ''
+  // this.email = ''
+  // this.message = ''
+}
+
 </script>
