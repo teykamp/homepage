@@ -44,7 +44,7 @@
                     <v-col>
                       <v-text-field
                         v-model="contactForm.email"
-                        style="min-width: 300px;"
+                        style="min-width: 300px; margin-bottom: 30px"
                         :rules="emailRules"
                         placeholder="Email"
                       ></v-text-field>
@@ -56,6 +56,7 @@
                     :rules="messageRules"
                   ></v-textarea>
                   <v-btn
+                    class="mt-2"
                     type="submit"
                   >Send Message</v-btn>
                 </v-form>
