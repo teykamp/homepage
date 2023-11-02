@@ -25,7 +25,6 @@
                 }"
               >
                 <v-form
-                  ref="contactForm"
                   v-model="valid"
                   @submit.prevent="sendEmail"
                   :style="{
@@ -135,7 +134,35 @@ const messageRules: ValidationRule[] = [
   }
 ]
 
+const validateField = (rules: ValidationRule[], value: string): true | string => {
+  for (const rule of rules) {
+    const result = rule(value)
+    if (result !== true) {
+      return result
+    }
+  }
+  return true
+}
+
 const sendEmail = async () => {
+  const nameValidation = validateField(nameRules, contactForm.value.name)
+  if (nameValidation !== true) {
+    console.error('Name validation error: ' + nameValidation)
+    return
+  }
+
+  const emailValidation = validateField(emailRules, contactForm.value.email)
+  if (emailValidation !== true) {
+    console.error('Email validation error: ' + emailValidation)
+    return
+  }
+
+  const messageValidation = validateField(messageRules, contactForm.value.message)
+  if (messageValidation !== true) {
+    console.error('Message validation error: ' + messageValidation)
+    return
+  }
+  
   try {
     // Create a new HTMLFormElement
     const formElement = document.createElement('form')
