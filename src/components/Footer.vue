@@ -25,6 +25,7 @@
                 }"
               >
                 <v-form
+                  ref="form"
                   v-model="valid"
                   @submit.prevent="sendEmail"
                   :style="{
@@ -56,7 +57,7 @@
                   ></v-textarea>
                   <v-btn
                     type="submit"
-                  >Send Email</v-btn>
+                  >Send Message</v-btn>
                 </v-form>
               </v-sheet>
             </div>
@@ -97,6 +98,7 @@ const colors = useGetColors('background')
 const secondaryColors = useGetColors('primary');
 
 const valid = ref(false)
+const form = ref()
 const contactForm = ref({
   email: '',
   name: '',
@@ -162,7 +164,7 @@ const sendEmail = async () => {
     console.error('Message validation error: ' + messageValidation)
     return
   }
-  
+
   try {
     // Create a new HTMLFormElement
     const formElement = document.createElement('form')
@@ -188,14 +190,14 @@ const sendEmail = async () => {
                             formElement, 
                             import.meta.env.VITE_APP_PUBLIC_KEY
                           )
+    // console.log('success')
     
                           
   } catch (error) {
     console.log({ error })
   }
-  contactForm.value.name = ''
-  contactForm.value.email = ''
-  contactForm.value.message = ''
+  // still has email and message with errors after reseting form
+  form.value.reset()
 }
 
 </script>
