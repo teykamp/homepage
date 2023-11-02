@@ -104,53 +104,57 @@ const contactForm = ref({
   message: '',
 })
 
-type ValidationRule = (value: string) => true | string;
+type ValidationRule = (value: string) => true | string
 
 const nameRules: ValidationRule[] = [
   (value) => {
-    if (value) return true;
-    return 'Name is required.';
+    if (value) return true
+    return 'Name is required.'
   },
   (value) => {
-    if (value?.length && value.length <= 50) return true;
-    return 'Name must be less than 50 characters.';
+    if (value?.length && value.length <= 50) return true
+    return 'Name must be less than 50 characters.'
   },
 ]
 
 const emailRules: ValidationRule[] = [
-  (value) => {
-    if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
-    return 'Must be a valid e-mail.'
-  }
-]
+        value => {
+          if (value) return true
+          return 'E-mail is requred.'
+        },
+        value => {
+          if (/.+@.+\..+/.test(value)) return true
+          return 'E-mail must be valid.'
+        },
+      ]
 
 const messageRules: ValidationRule[] = [
   (value) => {
-    if (value) return true;
-    return 'Message is Required.';
+    if (value) return true
+    return 'Message is Required.'
   }
 ]
 
 const sendEmail = async () => {
   try {
     // Create a new HTMLFormElement
-    const formElement = document.createElement('form');
+    const formElement = document.createElement('form')
 
     // Create form controls and add them to the form element
-    const nameInput = document.createElement('input');
-    nameInput.name = 'name';
+    const nameInput = document.createElement('input')
+    nameInput.name = 'name'
     nameInput.value = contactForm.value.name;
     formElement.appendChild(nameInput);
 
-    const emailInput = document.createElement('input');
-    emailInput.name = 'email';
+    const emailInput = document.createElement('input')
+    emailInput.name = 'email'
     emailInput.value = contactForm.value.email;
     formElement.appendChild(emailInput);
 
-    const messageInput = document.createElement('textarea');
-    messageInput.name = 'message';
-    messageInput.value = contactForm.value.message;
-    formElement.appendChild(messageInput);
+    const messageInput = document.createElement('textarea')
+    messageInput.name = 'message'
+    messageInput.value = contactForm.value.message
+    formElement.appendChild(messageInput)
 
     await emailjs.sendForm( import.meta.env.VITE_APP_SERVICE_ID,
                             import.meta.env.VITE_APP_TEMPLATE_ID, 
@@ -158,13 +162,13 @@ const sendEmail = async () => {
                             import.meta.env.VITE_APP_PUBLIC_KEY
                           )
     
-    contactForm.value.name = ''
-    contactForm.value.email = ''
-    contactForm.value.message = ''
-
+                          
   } catch (error) {
-    console.log({ error });
+    console.log({ error })
   }
+  contactForm.value.name = ''
+  contactForm.value.email = ''
+  contactForm.value.message = ''
 }
 
 </script>
