@@ -33,17 +33,25 @@
     </v-sheet>
     <main-content />
     <Footer />
+    <v-snackbar 
+      v-model="snackbar.snackbar" 
+      :timeout="3000" 
+      :color="snackbar.color"
+      style="font-family: Roboto Slab;"
+    >{{ snackbar.text }}</v-snackbar>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useDarkModeStore } from './stores/Store';
+import { useSnackbar } from './stores/Store';
 import { useGetColors } from './composables/useGetColors'
 
 import MainContent from './components/MainContent.vue';
 import Footer from './components/Footer.vue';
 
 const store = useDarkModeStore();
+const snackbar = useSnackbar();
 
 const colors = useGetColors('background')
 </script>

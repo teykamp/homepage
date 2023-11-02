@@ -1,5 +1,20 @@
 import { defineStore } from 'pinia'
 
+export const useSnackbar = defineStore('snackbar', {
+  state: () => ({
+    snackbar: false,
+    text: '',
+    color: ''
+  }),
+  actions: {
+    showSnackbar(text: string, color: string = '') {
+      this.text = text
+      this.color = color
+      this.snackbar = true
+    },
+  }
+})
+
 export const useDarkModeStore = defineStore('darkMode', {
   state: () => ({
     darkMode: true,
@@ -14,6 +29,7 @@ export const useDarkModeStore = defineStore('darkMode', {
       text: '#1a1a1a',
       primary: '#F1EFEF',
       accent: '#07e467', // mint
+      // consider lavender
     }
   }),
   actions: {

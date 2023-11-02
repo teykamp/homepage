@@ -88,15 +88,18 @@ import { ref } from 'vue'
 
 import { useDarkModeStore } from '../stores/Store'
 import { useGetColors } from '../composables/useGetColors'
+import { useSnackbar } from '../stores/Store'
+
 import { useDisplay } from 'vuetify'
 
 import footerLinks from '../data/footerLinks.json'
 
 const { lgAndUp, mdAndUp } = useDisplay()
 
+const snackbar = useSnackbar()
 const darkMode = useDarkModeStore()
 const colors = useGetColors('background')
-const secondaryColors = useGetColors('primary');
+const secondaryColors = useGetColors('primary')
 
 const valid = ref(false)
 const form = ref()
@@ -199,6 +202,7 @@ const sendEmail = async () => {
   }
   // still has email and message with errors after reseting form
   form.value.reset()
+  snackbar.showSnackbar('Message sent.')
 }
 
 </script>
