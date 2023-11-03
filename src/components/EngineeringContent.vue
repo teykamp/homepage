@@ -1,69 +1,76 @@
 <template>
-  <div class="resume-content" :style="{
+  <div 
+    class="resume-content" 
+    :style="{
       ...colors,
       // 'min-height': '100vh',
       'padding-left': mdAndUp ? '20%' : '',
       'padding-right': mdAndUp ? '20%' : '',
       'padding-top': '10px',
+    }"
+  >
+    <v-sheet
+      :style="{
+        ...colors,
+        'border': mdAndUp ? 'solid 6px' : '',
+        'margin-top': mdAndUp ? '' : '30px',
     }">
+      <h2 class="text-center mt-8">
+        Experience
+      </h2>
       <v-sheet
+        v-for="(experience, key) in text"
+        :key="key"
+        class="pa-6"
         :style="{
           ...colors,
-          'border': mdAndUp ? 'solid 6px' : '',
-          'margin-top': mdAndUp ? '' : '30px',
-      }">
-        <h2 class="text-center mt-8">
-          Experience
-        </h2>
-        <v-sheet
-          v-for="(experience, key) in text"
-          :key="key"
-          class="pa-6"
-          :style="{
-            ...colors,
-            'margin': 'auto',
-            'max-width': '800px',
-          }"
-        >
-          <v-card-title :style="{
-            'font-size': mdAndUp ? '' : '1em'
-          }">
-            {{ experience.title }}
-          </v-card-title>
-          <v-card-subtitle style="font-family: Martel; max-width: 300px;">
-            <div class="d-flex">
-              <v-icon>mdi-map-marker</v-icon>
-              {{ experience.company }}
-              <v-spacer></v-spacer>
-              <v-icon>mdi-calendar</v-icon>
-              {{ experience.year }}
-            </div>
-          </v-card-subtitle>
-          <v-card-actions>
+          'margin': 'auto',
+          'max-width': '800px',
+        }"
+      >
+        <v-card-title :style="{
+          'font-size': mdAndUp ? '' : '1em'
+        }">
+          {{ experience.title }}
+        </v-card-title>
+        <v-card-subtitle style="font-family: Martel; max-width: 300px;">
+          <div class="d-flex">
+            <v-icon>mdi-map-marker</v-icon>
+            {{ experience.company }}
             <v-spacer></v-spacer>
-            <v-btn
-              @click="toggleShow(key-1)"
-              density="comfortable"
-              size="small"
-              :icon="show[key-1] ? 'mdi-minus' : 'mdi-plus'"
-            ></v-btn>
-            <!-- :text="show[key-1] ? 'Show Less' : 'Show More'"
-              style="font-family: Martel;" -->
-          </v-card-actions>
-          <v-expand-transition>
-            <div v-show="show[key-1]">
-              <v-divider></v-divider>
-              <v-card-text 
-                v-for="accomplishment in experience.accomplishments"
-                style="font-family: Roboto Slab;"
-              >
-                {{ accomplishment }}
-              </v-card-text>
-            </div>
-          </v-expand-transition>
-        </v-sheet>
+            <v-icon>mdi-calendar</v-icon>
+            {{ experience.year }}
+          </div>
+        </v-card-subtitle>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            @click="toggleShow(key-1)"
+            density="comfortable"
+            size="small"
+            :icon="show[key-1] ? 'mdi-minus' : 'mdi-plus'"
+          ></v-btn>
+          <!-- :text="show[key-1] ? 'Show Less' : 'Show More'"
+            style="font-family: Martel;" -->
+        </v-card-actions>
+        <v-expand-transition>
+          <div v-show="show[key-1]">
+            <v-divider></v-divider>
+            <v-card-text 
+              v-for="accomplishment in experience.accomplishments"
+              style="font-family: Roboto Slab;"
+            >
+              {{ accomplishment }}
+            </v-card-text>
+          </div>
+        </v-expand-transition>
       </v-sheet>
-    download Resume
+      <v-btn
+        @click.prevent="open"
+        class="ma-6"
+        style="font-family: Roboto Slab"
+      >View Resume</v-btn>
+    </v-sheet>
   </div>
 </template>
 
@@ -94,5 +101,9 @@ const toggleShow = (key: number) => {
     currentKey.value = key;
     show.value[key] = true;
   }
+}
+
+const open = () => {
+  window.open('../data/resume.pdf', '_blank')
 }
 </script>
