@@ -1,84 +1,83 @@
 <template>
-    <v-divider></v-divider>
-    <v-sheet :style="{
-      ...colors,
-    }">
-      <v-container class="d-flex justify-center">
-        <div>
-          <p class="pb-6 pl-3">T<span :style="{
-            'color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
-          }">.</span> Eykamp</p>
-          <v-card
-            :style="{
-              'border-radius': lgAndUp ? '' : '0',
-              'background-color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
-              'width': lgAndUp ? '1200px' : '100vw',
-              
-            }"
-          >
-            <v-card-title class="text-center">Contact me</v-card-title>
-            <div class="d-flex justify-center">
-              <v-sheet 
-                :class="`${mdAndUp ? 'rounded-lg' : ''} pa-6`"
+  <v-sheet :style="{
+    ...colors,
+  }">
+    <v-container class="d-flex justify-center">
+      <div>
+        <p class="pb-6 pl-3">T<span :style="{
+          'color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
+        }">.</span> Eykamp</p>
+        <v-card
+          :style="{
+            'border-radius': lgAndUp ? '' : '0',
+            'background-color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
+            'width': lgAndUp ? '1200px' : '100vw',
+            
+          }"
+        >
+          <v-card-title class="text-center">Contact me</v-card-title>
+          <div class="d-flex justify-center">
+            <v-sheet 
+              :class="`${mdAndUp ? 'rounded-lg' : ''} pa-6`"
+              :style="{
+                'width': mdAndUp ? '60%' : '100%',
+              }"
+            >
+              <v-form
+                ref="form"
+                v-model="valid"
+                @submit.prevent="sendEmail"
                 :style="{
-                  'width': mdAndUp ? '60%' : '100%',
+                  'font-family': 'Roboto Slab',
                 }"
               >
-                <v-form
-                  ref="form"
-                  v-model="valid"
-                  @submit.prevent="sendEmail"
-                  :style="{
-                    'font-family': 'Roboto Slab',
-                  }"
-                >
-                  <v-row class="d-flex justify-space-between">
-                    <v-col>
-                      <v-text-field
-                        v-model="contactForm.name"
-                        style="min-width: 300px;"
-                        :rules="nameRules"
-                        placeholder="Name"
-                      ></v-text-field>
-                    </v-col>
-                    <v-col>
-                      <v-text-field
-                        v-model="contactForm.email"
-                        style="min-width: 300px; margin-bottom: 30px"
-                        :rules="emailRules"
-                        placeholder="Email"
-                      ></v-text-field>
-                    </v-col>
-                  </v-row>
-                  <v-textarea
-                    v-model="contactForm.message"
-                    placeholder="Message"
-                    :rules="messageRules"
-                  ></v-textarea>
-                  <v-btn
-                    class="mt-2"
-                    type="submit"
-                  >Send Message</v-btn>
-                </v-form>
-              </v-sheet>
-            </div>
-            <v-row class="d-flex justify-center my-6">
-              <v-btn
-                v-for="link in footerLinks"
-                :key="link.ref"
-                :icon="link.icon"
-                density="comfortable"
-                :href="link.ref"
-                target="_blank"
-                class="mx-2"
-                :style="{
-                  ...secondaryColors,
-              }"></v-btn>
-            </v-row>
-          </v-card>
-        </div>
-      </v-container>
-    </v-sheet>
+                <v-row class="d-flex justify-space-between">
+                  <v-col>
+                    <v-text-field
+                      v-model="contactForm.name"
+                      style="min-width: 300px;"
+                      :rules="nameRules"
+                      placeholder="Name"
+                    ></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model="contactForm.email"
+                      style="min-width: 300px; margin-bottom: 30px"
+                      :rules="emailRules"
+                      placeholder="Email"
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+                <v-textarea
+                  v-model="contactForm.message"
+                  placeholder="Message"
+                  :rules="messageRules"
+                ></v-textarea>
+                <v-btn
+                  class="mt-2"
+                  type="submit"
+                >Send Message</v-btn>
+              </v-form>
+            </v-sheet>
+          </div>
+          <v-row class="d-flex justify-center my-6">
+            <v-btn
+              v-for="link in footerLinks"
+              :key="link.ref"
+              :icon="link.icon"
+              density="comfortable"
+              :href="link.ref"
+              target="_blank"
+              class="mx-2"
+              :style="{
+                ...secondaryColors,
+            }"></v-btn>
+          </v-row>
+        </v-card>
+      </div>
+    </v-container>
+  </v-sheet>
 </template>
 
 <script setup lang="ts">
