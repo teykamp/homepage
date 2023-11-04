@@ -16,7 +16,7 @@
       <v-card
         v-for="(project, key) in text"
         :key="key"
-        class="mt-10"
+        class="mt-10 pa-6"
         elevation="0"
         :style="{
           ...secondaryColors,
@@ -55,7 +55,7 @@
           class="d-flex flex-wrap" 
           :style="{
           'position': 'absolute',
-          'bottom': '0'
+          'bottom': '15px'
         }">
           <v-chip
             v-for="(tag, key) in project.tags"
