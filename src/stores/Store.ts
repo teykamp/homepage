@@ -41,6 +41,7 @@ export const useDarkModeStore = defineStore('darkMode', {
 
 export const useLanguageStore = defineStore('language', {
   state: () => ({
+    languages: ['en', 'de'],
     language: 'en',
     content: {
       en: { // add stuff for hanse chat and for BOSS whatever thing
@@ -135,7 +136,7 @@ export const useLanguageStore = defineStore('language', {
     },
   }),
   actions: {
-      changeLanguage(language: 'en' | 'de') {
+      setLanguage(language: string) {
           this.language = language
       }
   }

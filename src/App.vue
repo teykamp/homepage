@@ -13,13 +13,13 @@
         }">.</span> Eykamp</p>
         <v-spacer></v-spacer>
         <v-btn 
-          @click="store.toggleDarkMode()"
+          @click="toggleLang()"
           variant="text"
           density="comfortable"
           :style="{
             'color': store.darkMode ? store.darkColor.accent : store.lightColor.accent
           }"
-        >{{ store.darkMode ? 'EN' : 'DE' }}</v-btn>
+        >{{ language.language }}</v-btn>
         <!-- fix colors above, make black in light mode? -->
         <v-btn 
           @click="store.toggleDarkMode()"
@@ -45,6 +45,7 @@
 <script setup lang="ts">
 import { useDarkModeStore } from './stores/Store';
 import { useSnackbar } from './stores/Store';
+import { useLanguageStore } from './stores/Store';
 import { useGetColors } from './composables/useGetColors'
 
 import MainContent from './components/MainContent.vue';
@@ -52,8 +53,18 @@ import Footer from './components/Footer.vue';
 
 const store = useDarkModeStore();
 const snackbar = useSnackbar();
+const language = useLanguageStore()
+
 
 const colors = useGetColors('background')
+
+const toggleLang = () => {
+  const langs = language.languages
+  let curr = language.language
+  const currentIndex = language.languages.indexOf(curr)
+  curr = langs[(currentIndex + 1) % langs.length]
+  language.setLanguage(curr)
+}
 </script>
 
 <style>
