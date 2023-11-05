@@ -198,6 +198,8 @@ const sendEmail = async () => {
                           
   } catch (error) {
     console.log({ error })
+    snackbar.showSnackbar('Error encountered.')
+
   }
   // still has email and message with errors after reseting form
   form.value.reset()
