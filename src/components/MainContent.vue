@@ -24,18 +24,18 @@
           <h2 :class="mdAndUp ? 'ml-16' : ''" :style="{ 'max-width': '26em',
              'font-size': mdAndUp ? '2em' : '1.1em',
           }">
-            {{ text.en.title[0] }}
+            {{ text.title[0] }}
             <span
               @click="scrollToElement('engineeringContent', 60)"
               style="white-space: nowrap;"
-            >{{ text.en.title[1] }}</span>
-            {{ text.en.title[2] }}
+            >{{ text.title[1] }}</span>
+            {{ text.title[2] }}
             <span
               @click="scrollToElement('codingContent',60)"
               style="white-space: nowrap;"
-            >{{ text.en.title[3] }}</span>
-            {{ text.en.title[4] }}
-            <p class="mt-6" style="font-size: 0.75em; font-style: italic; font-family: Martel;">{{ text.en.subtitle }}</p>
+            >{{ text.title[3] }}</span>
+            {{ text.title[4] }}
+            <p class="mt-6" style="font-size: 0.75em; font-style: italic; font-family: Martel;">{{ text.subtitle }}</p>
             <!-- <p style="font-size: 0.45em; font-family: Roboto Slab; font-weight: 400;">More About Me</p> -->
           </h2>
         </v-container>
@@ -79,7 +79,7 @@
             Acheivements
           </v-card-title>
             <v-list-item 
-              v-for="(acheivement, key) in text.en.acheivements"
+              v-for="(acheivement, key) in text.acheivements"
               :key="key"
               :style="{
                 ...secondaryColors,
@@ -122,10 +122,7 @@ const language = useLanguageStore()
 const colors = useGetColors('background');
 const secondaryColors = useGetColors('primary');
 
-
-const text = computed(() => {
-  return language.content
-})
+const text = computed(() => { return language.content[language.language] })
 </script>
 
 <style scoped>
