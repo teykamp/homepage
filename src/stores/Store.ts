@@ -86,8 +86,8 @@ export const useLanguageStore = defineStore('language', {
             title: 'BS, Environmental Engineering',
             year: '2022',
             accomplishments: {
-              1: 'Completed coursework with a focus on chemical engineering, environmental engineering, and computer science.',
-              2: 'Successfully excecuted a variety of challenging academic research and design projects in the fields of chemical and environmental engineering and computer science.',
+              1: 'Completed coursework with a focus on chemical engineering, environmental engineering, data science, and computer science.',
+              2: 'Successfully executed a variety of challenging academic research and design projects in the fields of chemical and environmental engineering and computer science.',
             }
           },
         },
@@ -131,7 +131,90 @@ export const useLanguageStore = defineStore('language', {
         }
       },
       de: {
-          
+        title: [
+          'Ich bin ein ',
+          'Ingenieur ',
+          'und ',
+          'full-stack Softwareentwickler',
+          '.'],
+        subtitle: 'Ich löse herausfordernde und spannende Probleme in jeder Branche .',
+        acheivements: {
+          1: 'Python, Javascript, C, and R selbst beigebracht',
+          2: 'Erfolgreicher CS- und Mathe-Tutor über mehrere Jahre',
+          3: 'Beherrschung vielen Disziplinen: Ingenieurwissenschaft, Softwareentwicklung und Data Science',
+          4: 'Hohe Produktivitätssteigerung bei vielen Projekten',
+          5: 'Funktioniert gut unter Druck und erfolgreich in zeitkritischen Situationen',
+          6: 'Hat EIT und HAZWOPER 40hr Zertifikaten',
+        },
+        resume: {
+          1: {
+            company: 'AECOM',
+            title: 'Umweltingenieur',
+            year: '2023',
+            accomplishments: {
+              1: 'Erfolgreiche Beaufsichtigung eines 6-monatigen Projekts von Anfang bis Ende indem die Zielabschlussraten um 200 % bzw. 150 % gesteigert wurden',
+              2: 'Konzeption einer Vielzahl von chemischen Prozessdiagrammen und Sanierungsverfahren, die von Schwermetallen bis hin zu fluorierten Kohlenwasserstoffen unter einer Vielzahl von Umgebungsbedingungen reichen',
+              3: 'Integrales Mitglied der Compliance-Mannschaft, deren Aufgabe sowohl private als auch gewerbliche Kunden strategisch zu beproben und die Zusammenarbeit mit den Bewohnern und dem Management zu fördern.',
+              4: 'Effektive Wartung und Verbesserung der bestehenden Infrastruktur und Arbeitsabläufe an einer Vielzahl von Standorten.',
+            }
+          },
+          2: {
+            company: 'PBS Engineering',
+            title: 'Environmental Services Intern',
+            year: '2021',
+            accomplishments: {
+              1: 'Aktualisierung von 40+ Wasserplänen für neue Genehmigungen.',
+              2: 'Verfasste eine Vielzahl von Plänen für Kunden, um die Einhaltung von Umweltvorschriften sicherzustellen.',
+            }
+          },
+          3: {
+            company: 'Rensselaer P. I.',
+            title: 'BS, Umweltingenieurwissenschaft',
+            year: '2022',
+            accomplishments: {
+              1: 'Studium des Chemieingenieurwesens, Umweltingenieurwesens, Data Science und Informatik.',
+              2: 'Erfolgreiche Durchführung von akademischer Forschungs- und Designprojekte in den Bereichen Chemie- und Umweltingenieurwesen und Informatik.',
+            }
+          },
+        },
+        projects: {
+          1: {
+            title: 'ArtSite',
+            description: 'Full-Stack-Anwendung, die Text- oder Bildbeiträge in einem Blog-ähnlichen Stil anzeigt. Ermöglicht es Benutzern, Beiträge zu liken, zu kommentieren und darauf zu antworten. Enthält Databaseverwaltungstools und Post-Statistiken.',
+            img: '',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'MongoDB': 'green',
+              'Typescript': 'blue',
+              'Express': 'grey',
+            },
+            src: 'https://github.com/teykamp/artsite',
+            deploy: 'https://artsite-production.up.railway.app/',
+          },
+          2: {
+            title: 'Clubs',
+            description: 'Frontend-Anwendung zur Erstellung einer JSON-Ausgabe für Arduino-betriebene LED-Jonglierclubs. Ermöglicht den Import/Export von JSON, die Kommunikation mit einer selbst gebauten Arduino-API und die Möglichkeit, auf dem Arduino selbst zu laufen. Kann über einen Wi-Fi-Chip auf dem Arduino über ein Händy oder einen Computer aufgerufen werden.',
+            img: '',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'Typescript': 'blue',
+            },
+            src: 'https://github.com/teykamp/clubs',
+            deploy: '',
+          },
+          // 3: {
+          //   title: 'Popout Portfolio',
+          //   description: '',
+          //   img: '',
+          //   tags: {
+
+          //   },
+          //   src: '',
+          //   deploy: '',
+          // }
+        }
       },
     },
   }),
