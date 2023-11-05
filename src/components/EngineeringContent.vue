@@ -58,6 +58,7 @@
             <v-divider></v-divider>
             <v-card-text 
               v-for="accomplishment in experience.accomplishments"
+              :key="accomplishment"
               style="font-family: Roboto Slab;"
             >
               {{ accomplishment }}
