@@ -29,13 +29,26 @@
           'max-width': '800px',
         }"
       >
-        <v-card-title :style="{
-          'font-size': mdAndUp ? '' : '1em'
-        }">
-          {{ experience.title }}
-        </v-card-title>
+        <div class="d-flex justify-space-between">
+          <v-card-title :style="{
+            'font-size': mdAndUp ? '' : '1em'
+          }">
+            {{ experience.title }}
+          </v-card-title>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              @click="toggleShow(key - 1)"
+              density="comfortable"
+              size="small"
+              :icon="show[key - 1] ? 'mdi-minus' : 'mdi-plus'"
+            ></v-btn>
+            <!-- :text="show[key-1] ? 'Show Less' : 'Show More'"
+            style="font-family: Martel;" -->
+          </v-card-actions>
+        </div>
         <v-card-subtitle style="font-family: Martel; max-width: 300px;">
-          <div class="d-flex">
+          <div class="d-flex mb-10">
             <v-icon>mdi-map-marker</v-icon>
             {{ experience.company }}
             <v-spacer></v-spacer>
@@ -43,17 +56,6 @@
             {{ experience.year }}
           </div>
         </v-card-subtitle>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            @click="toggleShow(key-1)"
-            density="comfortable"
-            size="small"
-            :icon="show[key-1] ? 'mdi-minus' : 'mdi-plus'"
-          ></v-btn>
-          <!-- :text="show[key-1] ? 'Show Less' : 'Show More'"
-            style="font-family: Martel;" -->
-        </v-card-actions>
         <v-expand-transition>
           <div v-show="show[key-1]">
             <v-divider></v-divider>
