@@ -123,7 +123,7 @@ const colors = useGetColors('background');
 const secondaryColors = useGetColors('primary');
 
 
-function scrollToElement(elementId: string, offset: number = 85 /* Height of header */) {
+const scrollToElement = (elementId: string, offset: number = 85 /* Height of header */) => {
   const element = document.getElementById(elementId);
   if (element) {
     const scrollOffset = element.getBoundingClientRect().top + window.scrollY - offset;
