@@ -122,15 +122,15 @@ const nameRules: ValidationRule[] = [
 ]
 
 const emailRules: ValidationRule[] = [
-        value => {
-          if (value) return true
-          return 'E-mail is requred.'
-        },
-        value => {
-          if (/.+@.+\..+/.test(value)) return true
-          return 'E-mail must be valid.'
-        },
-      ]
+  value => {
+    if (value) return true
+    return 'E-mail is requred.'
+  },
+  value => {
+    if (/.+@.+\..+/.test(value)) return true
+    return 'E-mail must be valid.'
+  },
+]
 
 const messageRules: ValidationRule[] = [
   (value) => {
