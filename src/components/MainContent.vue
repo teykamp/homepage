@@ -109,7 +109,7 @@ import { computed } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
 import { useGetColors } from '../composables/useGetColors'
-
+import { scrollToElement } from '../functions/scrollToElement'
 
 import EngineeringContent from './EngineeringContent.vue'
 import CodingContent from './CodingContent.vue'
@@ -122,18 +122,6 @@ const language = useLanguageStore()
 const colors = useGetColors('background');
 const secondaryColors = useGetColors('primary');
 
-
-const scrollToElement = (elementId: string, offset: number = 85 /* Height of header */) => {
-  const element = document.getElementById(elementId);
-  if (element) {
-    const scrollOffset = element.getBoundingClientRect().top + window.scrollY - offset;
-    
-    window.scrollTo({
-      top: scrollOffset,
-      behavior: 'smooth',
-    });
-  }
-}
 
 const text = computed(() => {
   return language.content

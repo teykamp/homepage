@@ -22,6 +22,7 @@
         v-for="(experience, key) in text"
         :key="key"
         class="pa-6"
+        :id="key"
         :style="{
           ...colors,
           'margin': 'auto',
@@ -69,7 +70,7 @@
       <v-btn
         @click.prevent="open"
         class="ma-6"
-        style="font-family: Roboto Slab"
+        style="font-family: Roboto Slab;"
       >View Resume</v-btn>
     </v-sheet>
   </div>
