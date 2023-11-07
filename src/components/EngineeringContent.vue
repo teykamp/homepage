@@ -31,7 +31,8 @@
       >
         <div class="d-flex justify-space-between">
           <v-card-title :style="{
-            'font-size': mdAndUp ? '' : '1em'
+            'font-size': mdAndUp ? '' : '1em',
+            'max-width': '86%',
           }">
             {{ experience.title }}
           </v-card-title>
