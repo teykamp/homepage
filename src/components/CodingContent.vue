@@ -24,7 +24,7 @@
           'max-width': '400px',
           'margin-right': smAndUp ? '20px' : '',
           'margin-left': smAndUp ? '20px' : '',
-          'height': '400px',
+          'height': '370px',
         }"
       >
         <v-img
