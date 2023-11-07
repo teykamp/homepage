@@ -16,7 +16,7 @@
       <v-card
         v-for="(project, key) in text"
         :key="key"
-        class="mt-10 pa-6"
+        class="mt-10"
         elevation="0"
         :style="{
           ...secondaryColors,
@@ -27,16 +27,26 @@
           'height': '400px',
         }"
       >
-        <v-card-title>
-          {{ project.title }}
-        </v-card-title>
-        <v-card-text style="font-family: Roboto Slab;">
-          {{ project.description }}
-        </v-card-text>
-        <v-card-actions class="d-inline" style="font-family: Martel;">
+        <v-img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.DL2BIH727Z0mrm3K9GoZygHaE8%26pid%3DApi&f=1&ipt=7439bdaf63a09ec2c137155f08f824de805d8a658b05bb39291a0953c48987a2&ipo=images"
+          class="image"
+        >
+          <div class="card-overlay">
+            <v-card-title class="">
+              {{ project.title }}
+            </v-card-title>
+            <v-card-text style="font-family: Roboto Slab;">
+              {{ project.description }}
+            </v-card-text>
+          </div>
+        </v-img>
+        <v-card-actions 
+          class="d-flex justify-space-around" 
+          style="font-family: Martel;"
+        >
           <v-btn
             v-if="project.src"
-            text="Project Source Code"
+            text="Code"
             prepend-icon="mdi-github"
             class="mt-2"
             :href="project.src"
@@ -44,7 +54,7 @@
           ></v-btn>
           <v-btn
             v-if="project.deploy"
-            text="Project Deployment"
+            text="Deploy"
             prepend-icon="mdi-link"
             class="mt-2"
             :href="project.deploy"
@@ -52,16 +62,17 @@
           ></v-btn>
         </v-card-actions>
         <v-card-actions 
-          class="d-flex flex-wrap" 
+          class="d-flex flex-wrap pa-5" 
           :style="{
           'position': 'absolute',
-          'bottom': '15px'
+          'bottom': '-5px',
         }">
           <v-chip
             v-for="(tag, key) in project.tags"
             :key="key"
             :color="tag"
             variant="outlined"
+            size="small"
             class="mt-2 mr-2"
           >
             {{ key }}
@@ -86,3 +97,20 @@ const secondaryColors = useGetColors('primary')
 const language = useLanguageStore()
 const text = computed(() => language.content[language.language].projects)
 </script>
+
+<style scoped>
+.image {
+  position: relative;
+  padding: 0;
+}
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  color: #fff;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+</style>
