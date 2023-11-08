@@ -24,31 +24,32 @@
           'max-width': '400px',
           'margin-right': smAndUp ? '20px' : '',
           'margin-left': smAndUp ? '20px' : '',
-          'height': '370px',
+          'height': '400px',
         }"
       >
         <v-img
           src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.DL2BIH727Z0mrm3K9GoZygHaE8%26pid%3DApi&f=1&ipt=7439bdaf63a09ec2c137155f08f824de805d8a658b05bb39291a0953c48987a2&ipo=images"
           class="image"
+          style="height:130px"
+          cover
         >
           <div class="card-overlay">
             <v-card-title class="">
               {{ project.title }}
             </v-card-title>
-            <v-card-text style="font-family: Roboto Slab;">
-              {{ project.description }}
-            </v-card-text>
           </div>
         </v-img>
+        <v-card-text style="font-family: Roboto Slab;">
+          {{ project.description }}
+        </v-card-text>
         <v-card-actions 
           class="d-flex justify-space-around" 
-          style="font-family: Martel;"
+          style="font-family: Martel; margin-top: -15px;"
         >
           <v-btn
             v-if="project.src"
             text="Code"
             prepend-icon="mdi-github"
-            class="mt-2"
             :href="project.src"
             target="_blank"
           ></v-btn>
@@ -56,7 +57,6 @@
             v-if="project.deploy"
             text="Deploy"
             prepend-icon="mdi-link"
-            class="mt-2"
             :href="project.deploy"
             target="_blank"
           ></v-btn>

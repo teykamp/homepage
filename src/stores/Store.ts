@@ -194,7 +194,7 @@ export const useLanguageStore = defineStore('language', {
           },
           2: {
             title: 'Clubs',
-            description: 'Frontend-Anwendung zur Erstellung einer JSON-Ausgabe für Arduino-betriebene LED-Jonglierclubs. Ermöglicht den Import/Export von JSON, die Kommunikation mit einer selbst gebauten Arduino-API und die Möglichkeit, auf dem Arduino selbst zu laufen. Kann über einen Wi-Fi-Chip auf dem Arduino über ein Händy oder einen Computer aufgerufen werden.',
+            description: 'Frontend zur Erstellung einer JSON-Ausgabe für Arduino-betriebene LED-Jonglierclubs. Ermöglicht den Import/Export von JSON, die Kommunikation mit einer selbst gebauten Arduino-API und die Möglichkeit, auf dem Arduino selbst zu laufen. Kann über einen Wi-Fi-Chip auf dem Arduino über ein Händy oder einen Computer aufgerufen werden.',
             img: '',
             tags: {
               'Vue': 'green',
