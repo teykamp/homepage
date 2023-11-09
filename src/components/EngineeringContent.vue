@@ -72,9 +72,10 @@
       </v-sheet>
       <v-btn
         @click.prevent="open"
-        class="ma-6"
+        class="ma-6 mt-2"
         style="font-family: Roboto Slab;"
-      >View Resume</v-btn>
+        prepend-icon="mdi-file-pdf-box"
+      >C.V./Resume</v-btn>
     </v-sheet>
   </div>
 </template>
