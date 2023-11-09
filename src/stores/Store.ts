@@ -64,7 +64,7 @@ export const useLanguageStore = defineStore('language', {
           1: {
             company: 'AECOM',
             title: 'Environmental Engineer',
-            year: '2023',
+            year: '2023 - Present',
             accomplishments: {
               1: 'Successfully oversaw a comprehensive 6-month project from inception to completion, rapidly achieving milestones by boosting objective completion rates by 200% and 150% respectively.',
               2: 'Conceptualized a variety of chemical process diagrams and remediation procedures ranging from heavy metals to fluorinated hydrocarbons in a variety of chellenging environmental conditions.',
@@ -73,6 +73,15 @@ export const useLanguageStore = defineStore('language', {
             }
           },
           2: {
+            company: 'Freelance',
+            title: 'Web Developer / Designer',
+            year: '2022 - Present',
+            accomplishments: {
+              1: 'Worked for several clients worldwide.',
+              2: 'Successful completion of projects across a variety of scopes and languages.',
+            }
+          },
+          3: {
             company: 'PBS Engineering',
             title: 'Environmental Services Intern',
             year: '2021',
@@ -81,10 +90,10 @@ export const useLanguageStore = defineStore('language', {
               2: 'Wrote a variety of plans for clients to ensure environmental compliance.',
             }
           },
-          3: {
+          4: {
             company: 'Rensselaer P. I.',
             title: 'BS, Environmental Engineering',
-            year: '2022',
+            year: '2018 - 2022',
             accomplishments: {
               1: 'Completed coursework with a focus on chemical engineering, environmental engineering, data science, and computer science.',
               2: 'Successfully executed a variety of challenging academic research and design projects in the fields of chemical and environmental engineering and computer science.',
@@ -150,7 +159,7 @@ export const useLanguageStore = defineStore('language', {
           1: {
             company: 'AECOM',
             title: 'Umweltingenieur',
-            year: '2023',
+            year: '2023 - Jetzt',
             accomplishments: {
               1: 'Erfolgreiche Beaufsichtigung eines 6-monatigen Projekts von Anfang bis Ende indem die Zielabschlussraten um 200 % bzw. 150 % gesteigert wurden',
               2: 'Konzeption einer Vielzahl von chemischen Prozessdiagrammen und Sanierungsverfahren, die von Schwermetallen bis hin zu fluorierten Kohlenwasserstoffen unter einer Vielzahl von Umgebungsbedingungen reichen',
@@ -159,6 +168,15 @@ export const useLanguageStore = defineStore('language', {
             }
           },
           2: {
+            company: 'Freiberuflich',
+            title: 'Web Developer / Designer',
+            year: '2022 - Jetzt',
+            accomplishments: {
+              1: 'Arbeitete für mehrere Kunden weltweit.',
+              2: 'Erfolgreicher Abschluss von Projekten in einer Vielzahl von Bereichen und Programmiersprachen.',
+            }
+          },
+          3: {
             company: 'PBS Engineering',
             title: 'Environmental Services Intern',
             year: '2021',
@@ -167,10 +185,10 @@ export const useLanguageStore = defineStore('language', {
               2: 'Verfasste eine Vielzahl von Plänen für Kunden, um die Einhaltung von Umweltvorschriften sicherzustellen.',
             }
           },
-          3: {
+          4: {
             company: 'Rensselaer P. I.',
             title: 'BS, Umweltingenieurwissenschaft',
-            year: '2022',
+            year: '2018 - 2022',
             accomplishments: {
               1: 'Studium des Chemieingenieurwesens, Umweltingenieurwesens, Data Science und Informatik.',
               2: 'Erfolgreiche Durchführung von akademischer Forschungs- und Designprojekte in den Bereichen Chemie- und Umweltingenieurwesen und Informatik.',
