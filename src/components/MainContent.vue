@@ -76,7 +76,7 @@
           'padding-bottom': '20px',
         }">
           <v-card-title class="mt-6 text-center" id="acheivements">
-            {{ language.language === 'en' ? 'Acheivements' : 'Errungenschaften'}}
+            {{ language.language === 'en' ? 'Achievements' : 'Errungenschaften'}}
           </v-card-title>
             <v-list-item 
               v-for="(acheivement, key) in text.acheivements"
