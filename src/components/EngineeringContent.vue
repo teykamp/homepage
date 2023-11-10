@@ -93,6 +93,7 @@ const colors = useGetColors('background')
 // figure out some way to have the currently selected one highlighted...
 // const selectedColors = useGetColors('primary')
 const language = useLanguageStore()
+// @ts-ignore
 const text = computed(() => language.content[language.language].resume)
 const length = Object.keys(text.value).length
 const show = ref(Array.from( { length } , () => false))

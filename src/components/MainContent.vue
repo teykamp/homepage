@@ -121,7 +121,7 @@ const language = useLanguageStore()
 
 const colors = useGetColors('background');
 const secondaryColors = useGetColors('primary');
-
+// @ts-ignore
 const text = computed(() => { return language.content[language.language] })
 </script>
 
