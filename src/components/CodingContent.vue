@@ -88,6 +88,7 @@ import { computed } from 'vue'
 
 import { useGetColors } from '../composables/useGetColors'
 import { useLanguageStore } from '../stores/Store'
+import {useDarkModeStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
 
 
@@ -95,7 +96,20 @@ const { smAndUp } = useDisplay()
 const colors = useGetColors('background')
 const secondaryColors = useGetColors('primary')
 const language = useLanguageStore()
+// @ts-ignore
 const text = computed(() => language.content[language.language].projects)
+const gradientColor = computed(() => {
+  if (useDarkModeStore().darkMode) {
+    return {
+      gradient: 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))',
+      text: '#fff'
+    }
+  }
+  return {
+    gradient: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8))`,
+    text: '#000'
+  }
+})
 </script>
 
 <style scoped>
@@ -108,8 +122,8 @@ const text = computed(() => language.content[language.language].projects)
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-  color: #fff;
+  background: v-bind('gradientColor.gradient');
+  color: v-bind('gradientColor.text');
   padding: 10px;
   padding-bottom: 0px;
 }
