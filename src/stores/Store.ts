@@ -104,7 +104,7 @@ export const useLanguageStore = defineStore('language', {
           1: {
             title: 'ArtSite',
             description: 'Full stack application that displays text or image posts in a blog-like style. Allows users to like, comment, and reply to posts. Includes database management tools and post statistics.',
-            img: '',
+            img: 'src/data/images/artsite.png',
             tags: {
               'Vue': 'green',
               'Vuetify': 'light-blue',
@@ -118,7 +118,7 @@ export const useLanguageStore = defineStore('language', {
           2: {
             title: 'Clubs',
             description: 'Front-end application to generate JSON output for arduino-run LED juggling clubs. Allows Import/Export of JSON, communication with a self-built arduino-api, and ability to run on the arduino itself. Can be accessed through a wi-fi chip on the arduino through a phone or computer.',
-            img: '',
+            img: 'src/data/images/clubs.png',
             tags: {
               'Vue': 'green',
               'Vuetify': 'light-blue',
@@ -199,7 +199,7 @@ export const useLanguageStore = defineStore('language', {
           1: {
             title: 'ArtSite',
             description: 'Full-Stack-Anwendung, die Text- oder Bildbeiträge in einem Blog-ähnlichen Stil anzeigt. Ermöglicht es Benutzern, Beiträge zu liken, zu kommentieren und darauf zu antworten. Enthält Databaseverwaltungstools und Post-Statistiken.',
-            img: '',
+            img: 'src/data/images/artsite.png',
             tags: {
               'Vue': 'green',
               'Vuetify': 'light-blue',
@@ -213,7 +213,7 @@ export const useLanguageStore = defineStore('language', {
           2: {
             title: 'Clubs',
             description: 'Frontend zur Erstellung einer JSON-Ausgabe für Arduino-betriebene LED-Jonglierclubs. Ermöglicht den Import/Export von JSON, die Kommunikation mit einer selbst gebauten Arduino-API und die Möglichkeit, auf dem Arduino selbst zu laufen. Kann über einen Wi-Fi-Chip auf dem Arduino über ein Händy oder einen Computer aufgerufen werden.',
-            img: '',
+            img: 'src/data/images/clubs.png',
             tags: {
               'Vue': 'green',
               'Vuetify': 'light-blue',

@@ -28,7 +28,7 @@
         }"
       >
         <v-img
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.DL2BIH727Z0mrm3K9GoZygHaE8%26pid%3DApi&f=1&ipt=7439bdaf63a09ec2c137155f08f824de805d8a658b05bb39291a0953c48987a2&ipo=images"
+          :src="project.img"
           class="image"
           style="height:130px"
           cover
