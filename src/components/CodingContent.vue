@@ -4,13 +4,13 @@
   }">
     <h2 
       class="text-center pt-16 pb-2"
-      
     >Projects</h2>
-    <div 
-      class="resume-content d-flex justify-center flex-wrap pb-16" 
-      :style="{
-        // 'min-height': '100vh',
-        ...colors,
+    <Motion 
+      class="resume-content d-flex justify-center flex-wrap pb-16"
+      :initial="false"
+      :transition="{duration: 1}"
+      :animate="{
+        rotate: 10
       }"
     >
       <v-card
@@ -79,7 +79,7 @@
           </v-chip>
         </v-card-actions>
       </v-card>
-    </div>
+    </Motion>
   </div>
 </template>
 
@@ -90,6 +90,7 @@ import { useGetColors } from '../composables/useGetColors'
 import { useLanguageStore } from '../stores/Store'
 import {useDarkModeStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
+import { Motion, Presence } from "motion/vue"
 
 
 const { smAndUp } = useDisplay()
