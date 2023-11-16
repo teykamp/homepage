@@ -5,18 +5,13 @@
     <h2 
       class="text-center pt-16 pb-2"
     >Projects</h2>
-    <Motion 
+    <div
       class="resume-content d-flex justify-center flex-wrap pb-16"
-      :initial="false"
-      :transition="{duration: 1}"
-      :animate="{
-        rotate: 10
-      }"
     >
       <v-card
         v-for="(project, key) in text"
         :key="key"
-        class="mt-10"
+        class="mt-10 card"
         elevation="0"
         :style="{
           ...secondaryColors,
@@ -79,19 +74,18 @@
           </v-chip>
         </v-card-actions>
       </v-card>
-    </Motion>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 
 import { useGetColors } from '../composables/useGetColors'
 import { useLanguageStore } from '../stores/Store'
 import {useDarkModeStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
-import { Motion, Presence } from "motion/vue"
-
+import { inView, animate } from 'motion'
 
 const { smAndUp } = useDisplay()
 const colors = useGetColors('background')
@@ -110,6 +104,17 @@ const gradientColor = computed(() => {
     gradient: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8))`,
     text: '#000'
   }
+})
+
+onMounted(() => {
+  inView(".card", (info) => {
+    animate(info.target, {
+        transform: ["rotate(90deg)", "translateX(100px) rotate(45deg)", "none"],
+        opacity: 1,
+      }, {
+        duration: 1
+      })
+  })
 })
 </script>
 
