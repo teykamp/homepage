@@ -91,9 +91,8 @@ export const useLanguageStore = defineStore('language', {
             }
           },
           4: {
-            company: 'Rensselaer P. I.',
+            company: 'Rensselaer Polytechnic Institute',
             title: 'BS, Environmental Engineering',
-            year: '2018 - 2022',
             accomplishments: {
               1: 'Completed coursework with a focus on chemical engineering, environmental engineering, data science, and computer science.',
               2: 'Successfully executed a variety of challenging academic research and design projects in the fields of chemical and environmental engineering and computer science.',

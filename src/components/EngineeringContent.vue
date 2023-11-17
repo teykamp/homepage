@@ -30,10 +30,13 @@
         }"
       >
         <div class="d-flex justify-space-between">
-          <v-card-title :style="{
-            'font-size': mdAndUp ? '' : '1em',
-            'max-width': '86%',
-          }">
+          <v-card-title 
+            :style="{
+              'font-size': mdAndUp ? '' : '1em',
+              'max-width': '86%',
+            }"
+            :class="show[key-1] ? 'text-wrap' : ''"
+          >
             {{ experience.title }}
           </v-card-title>
           <v-card-actions>
@@ -48,13 +51,20 @@
             style="font-family: Martel;" -->
           </v-card-actions>
         </div>
-        <v-card-subtitle style="font-family: Martel; max-width: 300px;">
-          <div class="d-flex mb-10">
-            <v-icon>mdi-map-marker</v-icon>
-            {{ experience.company }}
-            <v-spacer></v-spacer>
-            <v-icon>mdi-calendar</v-icon>
-            {{ experience.year }}
+        <v-card-subtitle 
+          :style="{
+            'font-family': 'Martel',
+            'max-width': '300px',
+          }">
+          <div class="d-flex">
+            <v-col>
+              <v-icon v-if="experience.company">mdi-map-marker</v-icon>
+              {{ experience.company }}
+            </v-col>
+            <v-col>
+              <v-icon v-if="experience.year">mdi-calendar</v-icon>
+              {{ experience.year }}
+            </v-col>
           </div>
         </v-card-subtitle>
         <v-expand-transition>
