@@ -15,7 +15,7 @@
             'height': '35vh',
           }"></v-sheet>
         <v-container 
-          class="d-flex pa-10"
+          class="d-flex pa-10 title"
           :style="{
             'max-width': '800px',
           }"
@@ -42,7 +42,7 @@
         <div class="d-flex justify-center">
           <v-btn
             v-if="!mdAndUp"
-            @click="scrollToElement('acheivements')"
+            @click="scrollToElement('achievements')"
             :style="{
               'background-color': darkMode.darkMode ? darkMode.lightColor.background : darkMode.darkColor.background,
               'color': darkMode.darkMode ? darkMode.lightColor.text : darkMode.darkColor.text,
@@ -66,7 +66,7 @@
             'max-width': '900px',
             'padding': '20px',
           }"
-          :class="`d-block ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''}`"
+          :class="`d-block ${mdAndUp ? 'mr-16' : ''} ${smAndUp ? 'mx-16' : ''} achievements`"
         >
         <!-- add some styling here based on the if it is displayed on mobile or not (i.e text size and spacing between list items) -->
         
@@ -75,11 +75,11 @@
           'padding-left': '20px',
           'padding-bottom': '20px',
         }">
-          <v-card-title class="mt-6 text-center" id="acheivements">
+          <v-card-title class="mt-6 text-center" id="achievements">
             {{ language.language === 'en' ? 'Achievements' : 'Errungenschaften'}}
           </v-card-title>
             <v-list-item 
-              v-for="(acheivement, key) in text.acheivements"
+              v-for="(achievement, key) in text.achievements"
               :key="key"
               :style="{
                 ...secondaryColors,
@@ -89,7 +89,7 @@
               }"
               class="mb-5"
             >
-              {{ acheivement }}
+              {{ achievement }}
             </v-list-item>
           </v-list>
         </v-sheet> 
@@ -105,11 +105,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useDarkModeStore, useLanguageStore } from '../stores/Store'
 import { useDisplay } from 'vuetify'
 import { useGetColors } from '../composables/useGetColors'
 import { scrollToElement } from '../functions/scrollToElement'
+import { inView, animate } from 'motion'
 
 import EngineeringContent from './EngineeringContent.vue'
 import CodingContent from './CodingContent.vue'
@@ -123,6 +124,30 @@ const colors = useGetColors('background');
 const secondaryColors = useGetColors('primary');
 // @ts-ignore
 const text = computed(() => { return language.content[language.language] })
+
+onMounted(() => {
+  if (mdAndUp.value) {
+    inView(".title", (info) => {
+  animate(info.target, {
+      transform: ['translateX(-80px)', 'none'],
+      opacity: [0, 1],
+    }, {
+      duration: 1
+    })
+})
+  
+  
+  inView(".achievements", (info) => {
+    animate(info.target, {
+        transform: ['translateX(80px)', 'none'],
+        opacity: [0, 1],
+      }, {
+        duration: 1
+      })
+  })
+  }
+  
+})
 </script>
 
 <style scoped>

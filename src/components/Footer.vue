@@ -2,7 +2,7 @@
   <v-sheet :style="{
     ...colors,
   }">
-    <v-container class="d-flex justify-center">
+    <v-container class="d-flex justify-center contact">
       <div>
         <p class="pb-6 pl-3">T<span :style="{
           'color': darkMode.darkMode ? darkMode.darkColor.accent : darkMode.lightColor.accent,
@@ -83,13 +83,14 @@
 <script setup lang="ts">
 import emailjs from 'emailjs-com'
 
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 import { useDarkModeStore } from '../stores/Store'
 import { useGetColors } from '../composables/useGetColors'
 import { useSnackbar } from '../stores/Store'
 
 import { useDisplay } from 'vuetify'
+import { inView, animate } from 'motion'
 
 import footerLinks from '../data/footerLinks.json'
 
@@ -206,4 +207,16 @@ const sendEmail = async () => {
   snackbar.showSnackbar('Message sent.')
 }
 
+onMounted(() => {
+  if (mdAndUp.value) {
+    inView(".contact", (info) => {
+      animate(info.target, {
+          transform: ["translateY(80px)", "none"],
+          opacity: [0, 1],
+        }, {
+          duration: 1
+        })
+    })
+  }
+})
 </script>

@@ -117,8 +117,8 @@ const gradientColor = computed(() => {
 onMounted(() => {
   inView(".card", (info) => {
     animate(info.target, {
-        transform: ["rotate(90deg)", "translateX(100px) rotate(45deg)", "none"],
-        opacity: 1,
+        transform: ["translateY(80px)", "none"],
+        opacity: [0, 1],
       }, {
         duration: 1
       })
