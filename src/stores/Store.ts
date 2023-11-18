@@ -52,7 +52,7 @@ export const useLanguageStore = defineStore('language', {
           'full-stack developer', 
           '.'],
         subtitle: 'I solve challenging and engaging problems in any industry .',
-        acheivements: {
+        achievements: {
           1: 'Self-taught Python, Javascript, C, and R',
           2: 'Successful CS and Math Tutor; In-depth over multiple years',
           3: 'Proficient in a variety of disciplines including Engineering, Programming, and Data Science',
@@ -146,7 +146,7 @@ export const useLanguageStore = defineStore('language', {
           'full-stack Softwareentwickler',
           '.'],
         subtitle: 'Ich löse herausfordernde und spannende Probleme in jeder Branche .',
-        acheivements: {
+        achievements: {
           1: 'Python, Javascript, C, and R selbst beigebracht',
           2: 'Erfolgreicher CS- und Mathe-Tutor über mehrere Jahre',
           3: 'Beherrschung vielen Disziplinen: Ingenieurwissenschaft, Softwareentwicklung und Data Science',
