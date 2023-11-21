@@ -126,7 +126,22 @@ export const useLanguageStore = defineStore('language', {
             src: 'https://github.com/teykamp/clubs',
             deploy: '',
           },
-          // 3: {
+          3: {
+            title: 'CoLab',
+            description: 'Leverages google sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
+            img: 'src/data/images/colab.png',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'Typescript': 'blue',
+              'Socket.io': 'grey',
+              'Google OAuth': 'red',
+              'Google Sheets': 'green'
+            },
+            src: 'https://github.com/yonava/colab',
+            deploy: 'https://colab.up.railway.app',
+          },
+          // 4: {
           //   title: 'Popout Portfolio',
           //   description: '',
           //   img: '',
