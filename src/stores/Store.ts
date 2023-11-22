@@ -128,7 +128,7 @@ export const useLanguageStore = defineStore('language', {
           },
           3: {
             title: 'CoLab',
-            description: 'Leverages google sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
+            description: 'Leverages google sheets api to generate lab reports and charts for commercial laboratories. Uses email libraries to add approvals, Socket.io for collaboration, and Google OAuth to store and manipulate user data and track data changes.',
             img: 'src/data/images/colab.png',
             tags: {
               'Vue': 'green',
@@ -235,6 +235,21 @@ export const useLanguageStore = defineStore('language', {
             },
             src: 'https://github.com/teykamp/clubs',
             deploy: '',
+          },
+          3: {
+            title: 'CoLab',
+            description: 'Nutzt die Google API, um Diagramme und Berichte für kommerzielle Labore zu erstellen. Verwendet email-libraries, Socket.io und Google OAuth um Benutzerdaten zu verarbeiten und Zusammenarbeit zu ermöglichen.',
+            img: 'src/data/images/colab.png',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'Typescript': 'blue',
+              'Socket.io': 'grey',
+              'Google OAuth': 'red',
+              'Google Sheets': 'green'
+            },
+            src: 'https://github.com/yonava/colab',
+            deploy: 'https://colab.up.railway.app',
           },
           // 3: {
           //   title: 'Popout Portfolio',
