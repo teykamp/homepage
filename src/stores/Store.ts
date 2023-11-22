@@ -200,7 +200,7 @@ export const useLanguageStore = defineStore('language', {
             }
           },
           4: {
-            company: 'Rensselaer P. I.',
+            company: 'Rensselaer Polytechnic Institute',
             title: 'BS, Umweltingenieurwissenschaft',
             year: '2018 - 2022',
             accomplishments: {
