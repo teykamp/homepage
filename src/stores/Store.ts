@@ -67,7 +67,7 @@ export const useLanguageStore = defineStore('language', {
             year: '2023 - Present',
             accomplishments: {
               1: 'Successfully oversaw a comprehensive 6-month project from inception to completion, rapidly achieving milestones by boosting objective completion rates by 200% and 150% respectively.',
-              2: 'Conceptualized a variety of chemical process diagrams and remediation procedures ranging from heavy metals to fluorinated hydrocarbons in a variety of chellenging environmental conditions.',
+              2: 'Conceptualized a variety of chemical process diagrams and remediation procedures ranging from heavy metals to fluorinated hydrocarbons in a variety of challenging environmental conditions.',
               3: 'Integral member of compliance unit tasked with the strategic sampling of both residential and industrial clientele, fostering collaborative interactions with residents and management.',
               4: 'Effectively maintained and improved existing infrastructure and workflows at a variety of sites.',
             }
@@ -128,7 +128,7 @@ export const useLanguageStore = defineStore('language', {
           },
           3: {
             title: 'CoLab',
-            description: 'Leverages Google Sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
+            description: 'Leverages google sheets api to generate lab reports and charts for commercial laboratories. Uses email libraries to add approvals, Socket.io for collaboration, and Google OAuth to store and manipulate user data and track data changes.',
             img: 'src/data/images/colab.png',
             tags: {
               'Vue': 'green',
@@ -251,7 +251,7 @@ export const useLanguageStore = defineStore('language', {
           },
           3: {
             title: 'CoLab',
-            description: 'Leverages google sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
+            description: 'Nutzt die Google API, um Diagramme und Berichte für kommerzielle Labore zu erstellen. Verwendet email-libraries, Socket.io und Google OAuth um Benutzerdaten zu verarbeiten und Zusammenarbeit zu ermöglichen.',
             img: 'src/data/images/colab.png',
             tags: {
               'Vue': 'green',
