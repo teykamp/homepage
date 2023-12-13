@@ -128,7 +128,7 @@ export const useLanguageStore = defineStore('language', {
           },
           3: {
             title: 'CoLab',
-            description: 'Leverages google sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
+            description: 'Leverages Google Sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
             img: 'src/data/images/colab.png',
             tags: {
               'Vue': 'green',
@@ -139,9 +139,22 @@ export const useLanguageStore = defineStore('language', {
               'Google Sheets': 'green'
             },
             src: 'https://github.com/yonava/colab',
-            deploy: 'https://colab.up.railway.app',
+            deploy: '',
           },
-          // 4: {
+          4: {
+            title: 'Markov Chains',
+            description: 'Drag-and-drop Markov Chain Simulator. Create new chains, run simulations, determine node and edge states, and generate a transition matrix.',
+            img: 'src/data/images/markov.png',
+            tags: {
+              'Vue': 'green',
+              'Typescript': 'blue',
+              'VueUse': 'green',
+              'MathJS': 'red',
+            },
+            src: 'https://github.com/Yonava/markov-chains',
+            deploy: 'https://cs240.netlify.app/',
+          },
+          // 5: {
           //   title: 'Popout Portfolio',
           //   description: '',
           //   img: '',
@@ -200,7 +213,7 @@ export const useLanguageStore = defineStore('language', {
             }
           },
           4: {
-            company: 'Rensselaer P. I.',
+            company: 'Rensselaer Polytechnic Institute',
             title: 'BS, Umweltingenieurwissenschaft',
             year: '2018 - 2022',
             accomplishments: {
@@ -235,6 +248,34 @@ export const useLanguageStore = defineStore('language', {
             },
             src: 'https://github.com/teykamp/clubs',
             deploy: '',
+          },
+          3: {
+            title: 'CoLab',
+            description: 'Leverages google sheets api to generate lab reports and charts. Includes email sending, approvals, socket.io, and google authentication.',
+            img: 'src/data/images/colab.png',
+            tags: {
+              'Vue': 'green',
+              'Vuetify': 'light-blue',
+              'Typescript': 'blue',
+              'Socket.io': 'grey',
+              'Google OAuth': 'red',
+              'Google Sheets': 'green'
+            },
+            src: 'https://github.com/yonava/colab',
+            deploy: '',
+          },
+          4: {
+            title: 'Markov Chains',
+            description: 'Drag-and-drop Markov Chain Simulator. Create new chains, run simulations, determine node and edge states, and generate a transition matrix.',
+            img: 'src/data/images/markov.png',
+            tags: {
+              'Vue': 'green',
+              'Typescript': 'blue',
+              'VueUse': 'green',
+              'MathJS': 'red',
+            },
+            src: 'https://github.com/Yonava/markov-chains',
+            deploy: 'https://cs240.netlify.app/',
           },
           // 3: {
           //   title: 'Popout Portfolio',
